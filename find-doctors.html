@@ -1,0 +1,1623 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MediNova - Find-doctors</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link href="style.css" rel="stylesheet" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "nav-item": "#070707",
+              "connect-wallet": "#6B54DF",
+              decentralized: "#7156EE",
+              "own-data": "#1cf5f9",
+              "ai-matching": "#e25c3b",
+              seamless: "#339883",
+              "h2-colored": "#715BE1",
+              "secondary-text": "#52429F",
+              "sub-text": "#6d6d6d",
+              "footer-items": "#dbdbdb",
+              "h1-para": "#57607B",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              manrope: ["Manrope", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-manrope antialiased bg-white">
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-transparent px-[15px] py-[24px] transition-all duration-300 ease-in-out"
+      id="navbar"
+    >
+      <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+        <!-- Logo (Image Only) & Nav Links -->
+        <div class="flex items-center gap-[60px]">
+          <a href="#" class="flex items-center no-underline">
+            <img
+              src="images/main-logo.png"
+              alt="MediNova Logo"
+              class="h-[32px] w-auto"
+            />
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:block">
+            <ul class="flex items-center gap-[48px] list-none m-0 p-0">
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[16px] font-bold text-nav-item no-underline"
+                  href="find-doctors.html"
+                  >Find Doctors</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="specialties.html"
+                  >Specialties</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="about-us.html"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="contact.html"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="hidden lg:flex items-center gap-[16px]">
+          <button
+            class="flex items-center gap-[8px] px-[20px] py-[10px] bg-white border border-gray-200 rounded-[10px] text-[14px] font-medium text-gray-700 hover:border-[#7C3AED] hover:text-[#7C3AED] transition-all cursor-pointer font-custom"
+          >
+            Connect Wallet
+          </button>
+
+          <!-- Notification Bell -->
+          <button
+            class="relative w-[40px] h-[40px] bg-white border border-gray-200 rounded-[10px] flex items-center justify-center hover:border-[#7C3AED] transition-all cursor-pointer"
+            aria-label="Notifications"
+          >
+            <i class="fa-regular fa-bell text-[16px] text-gray-700"></i>
+            <span
+              class="absolute top-[6px] right-[6px] w-[8px] h-[8px] bg-red-500 rounded-full border-2 border-white"
+            ></span>
+          </button>
+
+          <!-- Profile Picture -->
+          <button
+            class="w-[40px] h-[40px] rounded-full overflow-hidden border-2 border-gray-200 hover:border-[#7C3AED] transition-all cursor-pointer"
+            aria-label="Profile"
+          >
+            <img
+              src="images/profile-pic.png"
+              alt="Profile"
+              class="w-full h-full object-cover"
+              onerror="
+                this.src =
+                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22><circle cx=%2220%22 cy=%2220%22 r=%2220%22 fill=%22%237C3AED%22/><text x=%2220%22 y=%2225%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2214%22>U</text></svg>'
+              "
+            />
+          </button>
+        </div>
+        <button
+          class="lg:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-[8px]"
+          id="hamburgerBtn"
+        >
+          <span
+            class="block w-[26px] h-[3px] bg-gray-900 rounded-[2px] transition-all hamburger-line"
+          ></span>
+          <span
+            class="block w-[26px] h-[3px] bg-gray-900 rounded-[2px] transition-all hamburger-line"
+          ></span>
+          <span
+            class="block w-[26px] h-[3px] bg-gray-900 rounded-[2px] transition-all hamburger-line"
+          ></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        class="hidden lg:hidden absolute top-[72px] left-0 w-full bg-white shadow-lg rounded-b-[16px] p-[24px]"
+        id="mobileMenu"
+      >
+        <!-- Mobile Navigation -->
+        <nav>
+          <ul class="flex flex-col gap-[20px] mb-[24px] list-none m-0 p-0">
+            <li>
+              <a
+                href="index.html"
+                class="text-[16px] font-semibold text-gray-900 no-underline"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="find-doctors.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >Find Doctors</a
+              >
+            </li>
+            <li>
+              <a
+                href="specialties.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >Specialties</a
+              >
+            </li>
+            <li>
+              <a
+                href="about-us.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="flex flex-col gap-[12px]">
+          <a
+            class="w-full px-[20px] py-[12px] bg-white border border-gray-200 rounded-[10px] text-[14px] font-medium text-gray-700 cursor-pointer font-custom"
+            href="#"
+          >
+            Connect Wallet
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="relative w-full min-h-[700px] lg:min-h-[900px] bg-no-repeat bg-right-top bg-[length:auto_100%] sm:bg-[length:auto_100%] md:bg-[length:auto_100%] lg:bg-[length:auto_100%]"
+        style="
+          background-image: url(&quot;images/find-doctor-hero-img.png&quot;);
+        "
+      >
+        <div class="absolute inset-0 z-0 bg-white/0 max-[575px]:bg-white/70"></div>
+        <div
+          class="relative z-10 max-w-[1310px] mx-auto px-[15px] min-h-[700px] lg:min-h-[900px] flex items-center"
+        >
+          <div class="w-full max-w-[690px] py-[60px] lg:py-0">
+            <h1
+              class="text-[36px] sm:text-[42px] md:text-[48px] lg:text-[56px] xl:text-[64px] font-semibold leading-[1.1] text-nav-item mb-[20px] font-inter"
+            >
+              Find the Right Doctor for
+              <span class="text-h2-colored">Your Health</span>
+            </h1>
+
+            <!-- Subtext Paragraph -->
+            <p
+              class="text-[16px] leading-[1.7] font-medium text-h1-para mb-[32px] max-w-[480px]"
+            >
+              Connect with trusted specialists and book an appointment that fits
+              your schedule.
+            </p>
+
+            <!-- Unified Search Bar -->
+            <div
+              class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] p-[8px] mb-[28px] flex items-center max-w-[560px] border border-gray-100"
+            >
+              <!-- Search Input -->
+              <div class="flex items-center flex-1 px-[12px]">
+                <i
+                  class="fa-solid fa-magnifying-glass text-h2-colored text-[18px] mr-[12px]"
+                ></i>
+                <input
+                  type="text"
+                  placeholder="Search doctors, specialists..."
+                  class="w-full bg-transparent text-[14px] font-medium text-nav-item outline-none placeholder:text-[#9ca3af] font-manrope py-[8px]"
+                />
+              </div>
+
+              <!-- Divider -->
+              <div class="w-[1px] h-[32px] bg-gray-200 shrink-0"></div>
+
+              <!-- Location Input -->
+              <div class="flex items-center flex-1 px-[12px]">
+                <i
+                  class="fa-solid fa-location-dot text-h2-colored text-[18px] mr-[12px]"
+                ></i>
+                <input
+                  type="text"
+                  placeholder="Select Location"
+                  class="w-full bg-transparent text-[14px] font-medium text-nav-item outline-none placeholder:text-[#9ca3af] font-manrope py-[8px]"
+                />
+              </div>
+
+              <!-- Search Button -->
+              <button
+                class="px-[24px] py-[12px] bg-gradient-to-r from-[#6750DE] to-[#9E88EB] rounded-[12px] font-inter text-[14px] font-semibold text-white hover:opacity-90 transition-all cursor-pointer whitespace-nowrap ml-[8px]"
+              >
+                Search
+              </button>
+            </div>
+
+            <!-- Popular Searches -->
+            <div class="flex items-center gap-[12px] flex-wrap">
+              <span class="text-[14px] font-semibold text-nav-item font-inter"
+                >Popular Searches:</span
+              >
+              <a
+                href="#"
+                class="px-[16px] py-[6px] bg-white rounded-full text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)] hover:shadow-md transition-all"
+                >Cardiologist</a
+              >
+              <a
+                href="#"
+                class="px-[16px] py-[6px] bg-white rounded-full text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)] hover:shadow-md transition-all"
+                >Neurologist</a
+              >
+              <a
+                href="#"
+                class="px-[16px] py-[6px] bg-white rounded-full text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)] hover:shadow-md transition-all"
+                >Orthopedic</a
+              >
+              <a
+                href="#"
+                class="px-[16px] py-[6px] bg-white rounded-full text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)] hover:shadow-md transition-all"
+                >Pediatrician</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Stats Section -->
+      <section class="stats-section">
+        <div
+          class="max-w-[1310px] mx-auto px-[15px] cmn-gap py-[48px] sm:py-[60px] lg:py-[80px]"
+        >
+          <div
+            class="bg-white rounded-[24px] shadow-[0_4px_30px_rgba(113,_91,_225,_0.2)] py-[40px] px-[24px] sm:px-[40px] lg:px-[60px]"
+          >
+            <div
+              class="grid grid-cols-2 lg:grid-cols-4 gap-[32px] lg:gap-[40px] items-center"
+            >
+              <!-- Stat 1: Happy Patients -->
+              <div class="flex items-center gap-[16px]">
+                <div
+                  class="w-[56px] h-[56px] rounded-full bg-[#F3EEFF] flex items-center justify-center shrink-0"
+                >
+                  <i
+                    class="fa-solid fa-user-group text-[#715BE1] text-[22px]"
+                  ></i>
+                </div>
+                <div>
+                  <h3
+                    class="font-inter text-[28px] lg:text-[32px] font-bold text-[#715BE1] leading-tight"
+                  >
+                    20K+
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] lg:text-[14px] font-medium text-[#6d6d6d] mt-[2px]"
+                  >
+                    Happy Patients
+                  </p>
+                </div>
+              </div>
+
+              <!-- Stat 2: Expert Doctors -->
+              <div class="flex items-center gap-[16px]">
+                <div
+                  class="w-[56px] h-[56px] rounded-full bg-[#F3EEFF] flex items-center justify-center shrink-0"
+                >
+                  <i class="fa-solid fa-plus text-[#3B82F6] text-[22px]"></i>
+                </div>
+                <div>
+                  <h3
+                    class="font-inter text-[28px] lg:text-[32px] font-bold text-[#3B82F6] leading-tight"
+                  >
+                    1.5K+
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] lg:text-[14px] font-medium text-[#6d6d6d] mt-[2px]"
+                  >
+                    Expert Doctors
+                  </p>
+                </div>
+              </div>
+
+              <!-- Stat 3: Specializations -->
+              <div class="flex items-center gap-[16px]">
+                <div
+                  class="w-[56px] h-[56px] rounded-full bg-[#F3EEFF] flex items-center justify-center shrink-0"
+                >
+                  <i
+                    class="fa-solid fa-user-doctor text-[#EC4899] text-[22px]"
+                  ></i>
+                </div>
+                <div>
+                  <h3
+                    class="font-inter text-[28px] lg:text-[32px] font-bold text-[#EC4899] leading-tight"
+                  >
+                    50+
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] lg:text-[14px] font-medium text-[#6d6d6d] mt-[2px]"
+                  >
+                    Specializations
+                  </p>
+                </div>
+              </div>
+
+              <!-- Stat 4: Patient Satisfaction -->
+              <div class="flex items-center gap-[16px]">
+                <div
+                  class="w-[56px] h-[56px] rounded-full bg-[#F3EEFF] flex items-center justify-center shrink-0"
+                >
+                  <i
+                    class="fa-regular fa-face-smile text-[#14B8A6] text-[22px]"
+                  ></i>
+                </div>
+                <div>
+                  <h3
+                    class="font-inter text-[28px] lg:text-[32px] font-bold text-[#14B8A6] leading-tight"
+                  >
+                    99.9%
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] lg:text-[14px] font-medium text-[#6d6d6d] mt-[2px]"
+                  >
+                    Patient Satisfaction
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="all-doctors-section bg-[#f9fafb]">
+        <div
+          class="max-w-[1310px] mx-auto px-[15px] cmn-gap py-[48px] sm:py-[60px] lg:py-[80px]"
+        >
+          <!-- Main Grid: Changed breakpoint to xl so 1024px stacks nicely -->
+          <div
+            class="grid grid-cols-1 xl:grid-cols-[1fr_320px] gap-[24px] items-start"
+          >
+            <!-- Filters Sidebar (Moved to top in HTML, pushed to right on XL) -->
+            <aside
+              class="w-full bg-white rounded-[20px] p-[24px] shadow-[0_2px_12px_rgba(0,_0,_0,_0.04)] xl:sticky xl:top-[100px] xl:order-2 order-1 flex flex-col"
+            >
+              <!-- Filters Header -->
+              <div class="flex items-center justify-between mb-[20px]">
+                <h3 class="font-inter text-[18px] font-bold text-nav-item">
+                  Filters
+                </h3>
+                <button
+                  class="font-manrope text-[13px] font-semibold text-h2-colored hover:underline"
+                >
+                  Clear All
+                </button>
+              </div>
+
+              <!-- Specialization Filter -->
+              <div class="mb-[20px]">
+                <div class="flex items-center justify-between mb-[12px]">
+                  <h4 class="font-inter text-[14px] font-bold text-nav-item">
+                    Specialization
+                  </h4>
+                  <i
+                    class="fa-solid fa-chevron-up text-[12px] text-sub-text cursor-pointer"
+                  ></i>
+                </div>
+                <div class="relative mb-[12px]">
+                  <i
+                    class="fa-solid fa-magnifying-glass absolute left-[12px] top-1/2 -translate-y-1/2 text-[#9ca3af] text-[12px]"
+                  ></i>
+                  <input
+                    type="text"
+                    placeholder="Search specialization..."
+                    class="w-full bg-[#f9fafb] border border-gray-200 rounded-[8px] pl-[32px] pr-[12px] py-[10px] font-manrope text-[12px] text-nav-item outline-none focus:border-h2-colored transition-colors"
+                  />
+                </div>
+                <div class="flex flex-col gap-[10px]">
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    Cardiologist
+                  </label>
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    Neurologist
+                  </label>
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    Orthopedic
+                  </label>
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    Pediatrician
+                  </label>
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    Dermatologist
+                  </label>
+                  <button
+                    class="font-manrope text-[12px] font-semibold text-h2-colored hover:underline text-left mt-[4px]"
+                  >
+                    Show More
+                  </button>
+                </div>
+              </div>
+
+              <div class="h-[1px] bg-gray-100 my-[16px]"></div>
+
+              <!-- Experience Filter -->
+              <div class="mb-[20px]">
+                <div class="flex items-center justify-between mb-[12px]">
+                  <h4 class="font-inter text-[14px] font-bold text-nav-item">
+                    Experience
+                  </h4>
+                  <i
+                    class="fa-solid fa-chevron-up text-[12px] text-sub-text cursor-pointer"
+                  ></i>
+                </div>
+                <div class="flex flex-col gap-[10px]">
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    0 - 5 Years
+                  </label>
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      checked
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    5 - 10 Years
+                  </label>
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    10+ Years
+                  </label>
+                </div>
+              </div>
+
+              <div class="h-[1px] bg-gray-100 my-[16px]"></div>
+
+              <!-- Availability Filter -->
+              <div class="mb-[20px]">
+                <div class="flex items-center justify-between mb-[12px]">
+                  <h4 class="font-inter text-[14px] font-bold text-nav-item">
+                    Availability
+                  </h4>
+                  <i
+                    class="fa-solid fa-chevron-up text-[12px] text-sub-text cursor-pointer"
+                  ></i>
+                </div>
+                <div class="flex flex-col gap-[10px]">
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    Available Today
+                  </label>
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    Available Tomorrow
+                  </label>
+                </div>
+              </div>
+
+              <div class="h-[1px] bg-gray-100 my-[16px]"></div>
+
+              <!-- Location Filter -->
+              <div class="mb-[20px]">
+                <div class="flex items-center justify-between mb-[12px]">
+                  <h4 class="font-inter text-[14px] font-bold text-nav-item">
+                    Location
+                  </h4>
+                  <i
+                    class="fa-solid fa-chevron-up text-[12px] text-sub-text cursor-pointer"
+                  ></i>
+                </div>
+                <div class="relative mb-[12px]">
+                  <input
+                    type="text"
+                    placeholder="Enter your location"
+                    class="w-full bg-[#f9fafb] border border-gray-200 rounded-[8px] pl-[12px] pr-[36px] py-[10px] font-manrope text-[12px] text-nav-item outline-none focus:border-h2-colored transition-colors"
+                  />
+                  <i
+                    class="fa-solid fa-location-dot absolute right-[12px] top-1/2 -translate-y-1/2 text-h2-colored text-[14px]"
+                  ></i>
+                </div>
+                <select
+                  class="w-full bg-[#f9fafb] border border-gray-200 rounded-[8px] px-[12px] py-[10px] font-manrope text-[12px] text-nav-item outline-none focus:border-h2-colored transition-colors cursor-pointer"
+                >
+                  <option>Within 10 km</option>
+                  <option>Within 25 km</option>
+                  <option>Within 50 km</option>
+                </select>
+              </div>
+
+              <div class="h-[1px] bg-gray-100 my-[16px]"></div>
+
+              <!-- Consultation Type Filter -->
+              <div class="mb-[20px]">
+                <div class="flex items-center justify-between mb-[12px]">
+                  <h4 class="font-inter text-[14px] font-bold text-nav-item">
+                    Consultation Type
+                  </h4>
+                  <i
+                    class="fa-solid fa-chevron-up text-[12px] text-sub-text cursor-pointer"
+                  ></i>
+                </div>
+                <div class="flex flex-col gap-[10px]">
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    In-clinic
+                  </label>
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    Video Consultation
+                  </label>
+                  <label
+                    class="flex items-center gap-[10px] cursor-pointer font-manrope text-[13px] text-sub-text"
+                  >
+                    <input
+                      type="checkbox"
+                      class="w-[16px] h-[16px] rounded border-gray-300 text-h2-colored focus:ring-h2-colored cursor-pointer accent-[#715BE1]"
+                    />
+                    Home Visit
+                  </label>
+                </div>
+              </div>
+
+              <!-- Apply Filters Button -->
+              <button
+                class="w-full py-[12px] bg-gradient-to-r from-[#715BE1] to-[#9E88EB] rounded-[10px] font-inter text-[14px] font-semibold text-white hover:opacity-90 transition-all cursor-pointer"
+              >
+                Apply Filters
+              </button>
+
+              <!-- Need Help Section -->
+              <div class="bg-[#F9F6FF] rounded-[16px] p-[20px] mt-[24px]">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h4
+                      class="font-inter text-[14px] font-bold text-nav-item mb-[4px]"
+                    >
+                      Need help?
+                    </h4>
+                    <p
+                      class="font-manrope text-[11px] text-sub-text leading-[1.5] mb-[10px]"
+                    >
+                      Our support team is here to help you.
+                    </p>
+                    <button
+                      class="px-[14px] py-[6px] bg-white border border-h2-colored rounded-[8px] font-manrope text-[11px] font-semibold text-h2-colored hover:bg-h2-colored hover:text-white transition-all"
+                    >
+                      Contact Support
+                    </button>
+                  </div>
+                  <div
+                    class="w-[40px] h-[40px] rounded-full bg-white shadow-[0_2px_8px_rgba(113,_91,_225,_0.15)] flex items-center justify-center cursor-pointer hover:scale-105 transition-transform shrink-0 ml-[12px]"
+                  >
+                    <i
+                      class="fa-solid fa-headset text-h2-colored text-[16px]"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Doctor Cards Column -->
+            <div class="flex flex-col gap-[20px] order-2 xl:order-1">
+              <!-- Section Header -->
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-[16px] mb-[8px] rounded-[16px] p-[16px] sm:p-[20px] shadow-[0_2px_8px_rgba(0,_0,_0,_0.02)]"
+              >
+                <div>
+                  <h2
+                    class="font-inter text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-nav-item leading-tight"
+                  >
+                    All Doctors
+                  </h2>
+                  <p
+                    class="font-manrope text-[13px] sm:text-[14px] text-sub-text mt-[4px]"
+                  >
+                    Showing 24 results
+                  </p>
+                </div>
+                <div class="flex items-center gap-[12px] w-full sm:w-auto">
+                  <label
+                    class="font-manrope text-[14px] font-medium text-sub-text whitespace-nowrap"
+                    >Sort by:</label
+                  >
+                  <select
+                    class="w-full sm:w-auto bg-[#f9fafb] border border-gray-200 rounded-[10px] px-[16px] py-[10px] font-manrope text-[14px] font-medium text-nav-item outline-none cursor-pointer"
+                  >
+                    <option>Recommended</option>
+                    <option>Rating: High to Low</option>
+                    <option>Experience: High to Low</option>
+                    <option>Fee: Low to High</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Doctor Card 1 -->
+              <div
+                class="doctor-list-card bg-white rounded-[20px] p-[16px] sm:p-[24px] shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] relative"
+              >
+                <button
+                  class="absolute top-[16px] right-[16px] w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-white shadow-[0_4px_12px_rgba(0,_0,_0,_0.08)] flex items-center justify-center text-[#9ca3af] hover:text-[#EC4899] transition-colors z-10"
+                >
+                  <i class="fa-regular fa-heart text-[16px] sm:text-[20px]"></i>
+                </button>
+
+                <div
+                  class="flex flex-col md:flex-row gap-[16px] sm:gap-[24px] items-start"
+                >
+                  <div
+                    class="relative shrink-0 w-[100px] h-[120px] sm:w-[120px] sm:h-[140px] xl:w-[140px] xl:h-[160px] bg-[#f3f4f6] rounded-[12px] sm:rounded-[16px] overflow-hidden"
+                  >
+                    <img
+                      alt="Dr. Rahul Verma"
+                      class="w-full h-full object-cover object-top"
+                      src="images/doctor-3.png"
+                    />
+                    <span
+                      class="absolute top-[8px] left-[8px] w-[8px] h-[8px] bg-[#22C55E] rounded-full border-2 border-[#f3f4f6]"
+                    ></span>
+                  </div>
+
+                  <!-- Doctor Info -->
+                  <div class="flex-1 min-w-0">
+                    <h3
+                      class="font-inter text-[18px] sm:text-[22px] font-bold text-nav-item flex items-center gap-[6px] sm:gap-[8px] mb-[8px] sm:mb-[10px]"
+                    >
+                      Dr. Rahul Verma
+                      <i
+                        class="fa-solid fa-circle-check text-[#3B82F6] text-[16px] sm:text-[18px]"
+                      ></i>
+                    </h3>
+                    <div
+                      class="flex items-center gap-[8px] sm:gap-[10px] mb-[10px] sm:mb-[14px] flex-wrap"
+                    >
+                      <span
+                        class="px-[12px] sm:px-[16px] py-[4px] sm:py-[6px] bg-[rgba(113,_86,_238,_0.1)] rounded-full text-[11px] sm:text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)]"
+                        >Cardiologist</span
+                      >
+                      <span
+                        class="font-manrope text-[12px] sm:text-[13px] text-sub-text"
+                        >• 10+ Years Exp.</span
+                      >
+                    </div>
+                    <div class="flex flex-col gap-[6px] sm:gap-[8px]">
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-user-graduate text-[#9ca3af] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        MBBS, MD (Cardiology)
+                      </p>
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-hospital text-[#9ca3af] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        Fortis Hospital, Delhi
+                      </p>
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-star text-[#F59E0B] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        <span class="font-semibold text-nav-item">4.9</span>
+                        (512 reviews)
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="w-full sm:w-[200px] xl:w-[240px] shrink-0 flex flex-col gap-[10px] sm:gap-[14px]"
+                  >
+                    <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                      <i
+                        class="fa-regular fa-calendar-check text-[#22C55E] text-[18px] sm:text-[20px]"
+                      ></i>
+                      <span
+                        class="font-manrope text-[13px] sm:text-[15px] font-bold text-[#22C55E]"
+                        >Available Today</span
+                      >
+                    </div>
+                    <div class="flex flex-col gap-[8px] sm:gap-[10px]">
+                      <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                        <i
+                          class="fa-regular fa-clock text-[#9ca3af] text-[16px] sm:text-[18px]"
+                        ></i>
+                        <span
+                          class="font-manrope text-[13px] sm:text-[14px] font-bold text-nav-item"
+                          >10:00 AM - 1:00 PM</span
+                        >
+                      </div>
+                      <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                        <i
+                          class="fa-regular fa-clock text-[#9ca3af] text-[16px] sm:text-[18px]"
+                        ></i>
+                        <span
+                          class="font-manrope text-[13px] sm:text-[14px] font-bold text-nav-item"
+                          >4:00 PM - 7:00 PM</span
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="w-full py-[12px] sm:py-[14px] bg-gradient-to-r from-[#6750DE] to-[#9E88EB] rounded-[10px] sm:rounded-[12px] font-inter text-[14px] sm:text-[15px] font-semibold text-white hover:opacity-90 transition-all cursor-pointer mt-[4px]"
+                    >
+                      View Profile
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Doctor Card 2 -->
+              <div
+                class="doctor-list-card bg-white rounded-[20px] p-[16px] sm:p-[24px] shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] relative"
+              >
+                <button
+                  class="absolute top-[16px] right-[16px] w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-white shadow-[0_4px_12px_rgba(0,_0,_0,_0.08)] flex items-center justify-center text-[#9ca3af] hover:text-[#EC4899] transition-colors z-10"
+                >
+                  <i class="fa-regular fa-heart text-[16px] sm:text-[20px]"></i>
+                </button>
+                <div
+                  class="flex flex-col md:flex-row gap-[16px] sm:gap-[24px] items-start"
+                >
+                  <div
+                    class="relative shrink-0 w-[100px] h-[120px] sm:w-[120px] sm:h-[140px] xl:w-[140px] xl:h-[160px] bg-[#f3f4f6] rounded-[12px] sm:rounded-[16px] overflow-hidden"
+                  >
+                    <img
+                      alt="Dr. Priya Sharma"
+                      class="w-full h-full object-cover object-top"
+                      src="images/doctor-1.png"
+                    />
+                    <span
+                      class="absolute top-[8px] left-[8px] w-[8px] h-[8px] bg-[#22C55E] rounded-full border-2 border-[#f3f4f6]"
+                    ></span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h3
+                      class="font-inter text-[18px] sm:text-[22px] font-bold text-nav-item flex items-center gap-[6px] sm:gap-[8px] mb-[8px] sm:mb-[10px]"
+                    >
+                      Dr. Priya Sharma
+                      <i
+                        class="fa-solid fa-circle-check text-[#3B82F6] text-[16px] sm:text-[18px]"
+                      ></i>
+                    </h3>
+                    <div
+                      class="flex items-center gap-[8px] sm:gap-[10px] mb-[10px] sm:mb-[14px] flex-wrap"
+                    >
+                      <span
+                        class="px-[12px] sm:px-[16px] py-[4px] sm:py-[6px] bg-[rgba(113,_86,_238,_0.1)] rounded-full text-[11px] sm:text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)]"
+                        >Neurologist</span
+                      >
+                      <span
+                        class="font-manrope text-[12px] sm:text-[13px] text-sub-text"
+                        >• 8+ Years Exp.</span
+                      >
+                    </div>
+                    <div class="flex flex-col gap-[6px] sm:gap-[8px]">
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-user-graduate text-[#9ca3af] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        MBBS, DM (Neurology)
+                      </p>
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-hospital text-[#9ca3af] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        AIIMS, New Delhi
+                      </p>
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-star text-[#F59E0B] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        <span class="font-semibold text-nav-item">4.8</span>
+                        (421 reviews)
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full sm:w-[200px] xl:w-[240px] shrink-0 flex flex-col gap-[10px] sm:gap-[14px]"
+                  >
+                    <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                      <i
+                        class="fa-regular fa-calendar-check text-[#22C55E] text-[18px] sm:text-[20px]"
+                      ></i
+                      ><span
+                        class="font-manrope text-[13px] sm:text-[15px] font-bold text-[#22C55E]"
+                        >Available Today</span
+                      >
+                    </div>
+                    <div class="flex flex-col gap-[8px] sm:gap-[10px]">
+                      <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                        <i
+                          class="fa-regular fa-clock text-[#9ca3af] text-[16px] sm:text-[18px]"
+                        ></i
+                        ><span
+                          class="font-manrope text-[13px] sm:text-[14px] font-bold text-nav-item"
+                          >11:00 AM - 2:00 PM</span
+                        >
+                      </div>
+                      <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                        <i
+                          class="fa-regular fa-clock text-[#9ca3af] text-[16px] sm:text-[18px]"
+                        ></i
+                        ><span
+                          class="font-manrope text-[13px] sm:text-[14px] font-bold text-nav-item"
+                          >5:00 PM - 8:00 PM</span
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="w-full py-[12px] sm:py-[14px] bg-gradient-to-r from-[#6750DE] to-[#9E88EB] rounded-[10px] sm:rounded-[12px] font-inter text-[14px] sm:text-[15px] font-semibold text-white hover:opacity-90 transition-all cursor-pointer mt-[4px]"
+                    >
+                      View Profile
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Doctor Card 3 -->
+              <div
+                class="doctor-list-card bg-white rounded-[20px] p-[16px] sm:p-[24px] shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] relative"
+              >
+                <button
+                  class="absolute top-[16px] right-[16px] w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-white shadow-[0_4px_12px_rgba(0,_0,_0,_0.08)] flex items-center justify-center text-[#9ca3af] hover:text-[#EC4899] transition-colors z-10"
+                >
+                  <i class="fa-regular fa-heart text-[16px] sm:text-[20px]"></i>
+                </button>
+                <div
+                  class="flex flex-col md:flex-row gap-[16px] sm:gap-[24px] items-start"
+                >
+                  <div
+                    class="relative shrink-0 w-[100px] h-[120px] sm:w-[120px] sm:h-[140px] xl:w-[140px] xl:h-[160px] bg-[#f3f4f6] rounded-[12px] sm:rounded-[16px] overflow-hidden"
+                  >
+                    <img
+                      alt="Dr. Arjun Mehta"
+                      class="w-full h-full object-cover object-top"
+                      src="images/doctor-5.png"
+                    />
+                    <span
+                      class="absolute top-[8px] left-[8px] w-[8px] h-[8px] bg-[#22C55E] rounded-full border-2 border-[#f3f4f6]"
+                    ></span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h3
+                      class="font-inter text-[18px] sm:text-[22px] font-bold text-nav-item flex items-center gap-[6px] sm:gap-[8px] mb-[8px] sm:mb-[10px]"
+                    >
+                      Dr. Arjun Mehta
+                      <i
+                        class="fa-solid fa-circle-check text-[#3B82F6] text-[16px] sm:text-[18px]"
+                      ></i>
+                    </h3>
+                    <div
+                      class="flex items-center gap-[8px] sm:gap-[10px] mb-[10px] sm:mb-[14px] flex-wrap"
+                    >
+                      <span
+                        class="px-[12px] sm:px-[16px] py-[4px] sm:py-[6px] bg-[rgba(113,_86,_238,_0.1)] rounded-full text-[11px] sm:text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)]"
+                        >Orthopedic</span
+                      >
+                      <span
+                        class="font-manrope text-[12px] sm:text-[13px] text-sub-text"
+                        >• 12+ Years Exp.</span
+                      >
+                    </div>
+                    <div class="flex flex-col gap-[6px] sm:gap-[8px]">
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-user-graduate text-[#9ca3af] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        MBBS, MS (Orthopedics)
+                      </p>
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-hospital text-[#9ca3af] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        Max Hospital, Delhi
+                      </p>
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-star text-[#F59E0B] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        <span class="font-semibold text-nav-item">4.9</span>
+                        (603 reviews)
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full sm:w-[200px] xl:w-[240px] shrink-0 flex flex-col gap-[10px] sm:gap-[14px]"
+                  >
+                    <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                      <i
+                        class="fa-regular fa-calendar-check text-[#3B82F6] text-[18px] sm:text-[20px]"
+                      ></i
+                      ><span
+                        class="font-manrope text-[13px] sm:text-[15px] font-bold text-[#3B82F6]"
+                        >Available Tomorrow</span
+                      >
+                    </div>
+                    <div class="flex flex-col gap-[8px] sm:gap-[10px]">
+                      <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                        <i
+                          class="fa-regular fa-clock text-[#9ca3af] text-[16px] sm:text-[18px]"
+                        ></i
+                        ><span
+                          class="font-manrope text-[13px] sm:text-[14px] font-bold text-nav-item"
+                          >9:00 AM - 12:00 PM</span
+                        >
+                      </div>
+                      <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                        <i
+                          class="fa-regular fa-clock text-[#9ca3af] text-[16px] sm:text-[18px]"
+                        ></i
+                        ><span
+                          class="font-manrope text-[13px] sm:text-[14px] font-bold text-nav-item"
+                          >3:00 PM - 6:00 PM</span
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="w-full py-[12px] sm:py-[14px] bg-gradient-to-r from-[#6750DE] to-[#9E88EB] rounded-[10px] sm:rounded-[12px] font-inter text-[14px] sm:text-[15px] font-semibold text-white hover:opacity-90 transition-all cursor-pointer mt-[4px]"
+                    >
+                      View Profile
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Doctor Card 4 -->
+              <div
+                class="doctor-list-card bg-white rounded-[20px] p-[16px] sm:p-[24px] shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] relative"
+              >
+                <button
+                  class="absolute top-[16px] right-[16px] w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-white shadow-[0_4px_12px_rgba(0,_0,_0,_0.08)] flex items-center justify-center text-[#9ca3af] hover:text-[#EC4899] transition-colors z-10"
+                >
+                  <i class="fa-regular fa-heart text-[16px] sm:text-[20px]"></i>
+                </button>
+                <div
+                  class="flex flex-col md:flex-row gap-[16px] sm:gap-[24px] items-start"
+                >
+                  <div
+                    class="relative shrink-0 w-[100px] h-[120px] sm:w-[120px] sm:h-[140px] xl:w-[140px] xl:h-[160px] bg-[#f3f4f6] rounded-[12px] sm:rounded-[16px] overflow-hidden"
+                  >
+                    <img
+                      alt="Dr. Neha Kapoor"
+                      class="w-full h-full object-cover object-top"
+                      src="images/doctor-2.png"
+                    />
+                    <span
+                      class="absolute top-[8px] left-[8px] w-[8px] h-[8px] bg-[#22C55E] rounded-full border-2 border-[#f3f4f6]"
+                    ></span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h3
+                      class="font-inter text-[18px] sm:text-[22px] font-bold text-nav-item flex items-center gap-[6px] sm:gap-[8px] mb-[8px] sm:mb-[10px]"
+                    >
+                      Dr. Neha Kapoor
+                      <i
+                        class="fa-solid fa-circle-check text-[#3B82F6] text-[16px] sm:text-[18px]"
+                      ></i>
+                    </h3>
+                    <div
+                      class="flex items-center gap-[8px] sm:gap-[10px] mb-[10px] sm:mb-[14px] flex-wrap"
+                    >
+                      <span
+                        class="px-[12px] sm:px-[16px] py-[4px] sm:py-[6px] bg-[rgba(113,_86,_238,_0.1)] rounded-full text-[11px] sm:text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)]"
+                        >Pediatrician</span
+                      >
+                      <span
+                        class="font-manrope text-[12px] sm:text-[13px] text-sub-text"
+                        >• 7+ Years Exp.</span
+                      >
+                    </div>
+                    <div class="flex flex-col gap-[6px] sm:gap-[8px]">
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-user-graduate text-[#9ca3af] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        MBBS, DCH (Pediatrics)
+                      </p>
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-hospital text-[#9ca3af] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        Apollo Hospital, Delhi
+                      </p>
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-star text-[#F59E0B] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        <span class="font-semibold text-nav-item">4.7</span>
+                        (312 reviews)
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full sm:w-[200px] xl:w-[240px] shrink-0 flex flex-col gap-[10px] sm:gap-[14px]"
+                  >
+                    <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                      <i
+                        class="fa-regular fa-calendar-check text-[#22C55E] text-[18px] sm:text-[20px]"
+                      ></i
+                      ><span
+                        class="font-manrope text-[13px] sm:text-[15px] font-bold text-[#22C55E]"
+                        >Available Today</span
+                      >
+                    </div>
+                    <div class="flex flex-col gap-[8px] sm:gap-[10px]">
+                      <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                        <i
+                          class="fa-regular fa-clock text-[#9ca3af] text-[16px] sm:text-[18px]"
+                        ></i
+                        ><span
+                          class="font-manrope text-[13px] sm:text-[14px] font-bold text-nav-item"
+                          >10:00 AM - 1:00 PM</span
+                        >
+                      </div>
+                      <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                        <i
+                          class="fa-regular fa-clock text-[#9ca3af] text-[16px] sm:text-[18px]"
+                        ></i
+                        ><span
+                          class="font-manrope text-[13px] sm:text-[14px] font-bold text-nav-item"
+                          >4:00 PM - 7:00 PM</span
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="w-full py-[12px] sm:py-[14px] bg-gradient-to-r from-[#6750DE] to-[#9E88EB] rounded-[10px] sm:rounded-[12px] font-inter text-[14px] sm:text-[15px] font-semibold text-white hover:opacity-90 transition-all cursor-pointer mt-[4px]"
+                    >
+                      View Profile
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Doctor Card 5 -->
+              <div
+                class="doctor-list-card bg-white rounded-[20px] p-[16px] sm:p-[24px] shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] relative"
+              >
+                <button
+                  class="absolute top-[16px] right-[16px] w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-white shadow-[0_4px_12px_rgba(0,_0,_0,_0.08)] flex items-center justify-center text-[#9ca3af] hover:text-[#EC4899] transition-colors z-10"
+                >
+                  <i class="fa-regular fa-heart text-[16px] sm:text-[20px]"></i>
+                </button>
+                <div
+                  class="flex flex-col md:flex-row gap-[16px] sm:gap-[24px] items-start"
+                >
+                  <div
+                    class="relative shrink-0 w-[100px] h-[120px] sm:w-[120px] sm:h-[140px] xl:w-[140px] xl:h-[160px] bg-[#f3f4f6] rounded-[12px] sm:rounded-[16px] overflow-hidden"
+                  >
+                    <img
+                      alt="Dr. Vikram Singh"
+                      class="w-full h-full object-cover object-top"
+                      src="images/doctor-4.png"
+                    />
+                    <span
+                      class="absolute top-[8px] left-[8px] w-[8px] h-[8px] bg-[#22C55E] rounded-full border-2 border-[#f3f4f6]"
+                    ></span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h3
+                      class="font-inter text-[18px] sm:text-[22px] font-bold text-nav-item flex items-center gap-[6px] sm:gap-[8px] mb-[8px] sm:mb-[10px]"
+                    >
+                      Dr. Vikram Singh
+                      <i
+                        class="fa-solid fa-circle-check text-[#3B82F6] text-[16px] sm:text-[18px]"
+                      ></i>
+                    </h3>
+                    <div
+                      class="flex items-center gap-[8px] sm:gap-[10px] mb-[10px] sm:mb-[14px] flex-wrap"
+                    >
+                      <span
+                        class="px-[12px] sm:px-[16px] py-[4px] sm:py-[6px] bg-[rgba(113,_86,_238,_0.1)] rounded-full text-[11px] sm:text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)]"
+                        >Dermatologist</span
+                      >
+                      <span
+                        class="font-manrope text-[12px] sm:text-[13px] text-sub-text"
+                        >• 9+ Years Exp.</span
+                      >
+                    </div>
+                    <div class="flex flex-col gap-[6px] sm:gap-[8px]">
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-user-graduate text-[#9ca3af] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        MBBS, MD (Dermatology)
+                      </p>
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-hospital text-[#9ca3af] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        BLK Hospital, Delhi
+                      </p>
+                      <p
+                        class="font-manrope text-[13px] sm:text-[14px] text-sub-text flex items-center gap-[8px]"
+                      >
+                        <i
+                          class="fa-solid fa-star text-[#F59E0B] text-[14px] sm:text-[16px] w-[18px] sm:w-[20px]"
+                        ></i>
+                        <span class="font-semibold text-nav-item">4.8</span>
+                        (256 reviews)
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full sm:w-[200px] xl:w-[240px] shrink-0 flex flex-col gap-[10px] sm:gap-[14px]"
+                  >
+                    <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                      <i
+                        class="fa-regular fa-calendar-check text-[#3B82F6] text-[18px] sm:text-[20px]"
+                      ></i
+                      ><span
+                        class="font-manrope text-[13px] sm:text-[15px] font-bold text-[#3B82F6]"
+                        >Available Tomorrow</span
+                      >
+                    </div>
+                    <div class="flex flex-col gap-[8px] sm:gap-[10px]">
+                      <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                        <i
+                          class="fa-regular fa-clock text-[#9ca3af] text-[16px] sm:text-[18px]"
+                        ></i
+                        ><span
+                          class="font-manrope text-[13px] sm:text-[14px] font-bold text-nav-item"
+                          >11:00 AM - 2:00 PM</span
+                        >
+                      </div>
+                      <div class="flex items-center gap-[8px] sm:gap-[10px]">
+                        <i
+                          class="fa-regular fa-clock text-[#9ca3af] text-[16px] sm:text-[18px]"
+                        ></i
+                        ><span
+                          class="font-manrope text-[13px] sm:text-[14px] font-bold text-nav-item"
+                          >5:00 PM - 8:00 PM</span
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="w-full py-[12px] sm:py-[14px] bg-gradient-to-r from-[#6750DE] to-[#9E88EB] rounded-[10px] sm:rounded-[12px] font-inter text-[14px] sm:text-[15px] font-semibold text-white hover:opacity-90 transition-all cursor-pointer mt-[4px]"
+                    >
+                      View Profile
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center gap-[8px] mt-[32px]">
+            <button
+              class="w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] rounded-full bg-white border border-gray-200 text-sub-text font-inter text-[13px] sm:text-[14px] font-semibold flex items-center justify-center hover:border-h2-colored hover:text-h2-colored transition-all"
+            >
+              <i
+                class="fa-solid fa-chevron-left text-[11px] sm:text-[12px]"
+              ></i>
+            </button>
+            <button
+              class="w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] rounded-full bg-gradient-to-r from-[#6750DE] to-[#9E88EB] text-white font-inter text-[13px] sm:text-[14px] font-semibold flex items-center justify-center shadow-[0_4px_12px_rgba(113,_91,_225,_0.3)]"
+            >
+              1
+            </button>
+            <button
+              class="w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] rounded-full bg-white border border-gray-200 text-sub-text font-inter text-[13px] sm:text-[14px] font-semibold flex items-center justify-center hover:border-h2-colored hover:text-h2-colored transition-all"
+            >
+              2
+            </button>
+            <button
+              class="w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] rounded-full bg-white border border-gray-200 text-sub-text font-inter text-[13px] sm:text-[14px] font-semibold flex items-center justify-center hover:border-h2-colored hover:text-h2-colored transition-all"
+            >
+              3
+            </button>
+            <button
+              class="w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] rounded-full bg-white border border-gray-200 text-sub-text font-inter text-[13px] sm:text-[14px] font-semibold flex items-center justify-center hover:border-h2-colored hover:text-h2-colored transition-all"
+            >
+              <i
+                class="fa-solid fa-chevron-right text-[11px] sm:text-[12px]"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section bg-[#0f172a] text-white">
+      <div class="max-w-[1310px] mx-auto px-[15px] pt-[80px] pb-[20px]">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-[1fr_2fr_2fr] gap-[40px] mb-[60px]"
+        >
+          <div class="footer-brand flex flex-col gap-[20px]">
+            <a
+              class="footer-logo flex items-center gap-[10px] no-underline"
+              href="index.html"
+            >
+              <span
+                class="footer-logo-text text-[22px] font-bold text-white font-inter"
+                >MediNova</span
+              >
+            </a>
+            <p
+              class="footer-description font-inter text-[14px] font-normal leading-[1.7] text-[#94a3b8] max-w-[220px]"
+            >
+              Revolutionizing healthcare with Web 3.0 technology. Secure,
+              private, and patient-first.
+            </p>
+            <div class="footer-social flex gap-[12px] mt-[8px]">
+              <a
+                aria-label="Discord"
+                class="social-icon social-discord w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] text-white no-underline transition-all duration-300 ease-in-out bg-[#5865f2]"
+                href="https://discord.com"
+                rel="noopener noreferrer"
+                target="_blank"
+                ><i class="fa-brands fa-discord"></i
+              ></a>
+              <a
+                aria-label="X (Twitter)"
+                class="social-icon social-x w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] text-white no-underline transition-all duration-300 ease-in-out bg-[#1a1a1a]"
+                href="https://twitter.com"
+                rel="noopener noreferrer"
+                target="_blank"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a
+                aria-label="Telegram"
+                class="social-icon social-telegram w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] text-white no-underline transition-all duration-300 ease-in-out bg-[#229ed9]"
+                href="https://telegram.org"
+                rel="noopener noreferrer"
+                target="_blank"
+                ><i class="fa-brands fa-telegram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-[0px]">
+            <div class="footer-link-column flex flex-col gap-[20px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Platform
+              </h4>
+              <ul
+                class="footer-link-list list-none m-0 p-0 flex flex-col gap-[14px]"
+              >
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Find Doctors</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Specialties</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >How it Works</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Pricing</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-link-column flex flex-col gap-[20px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Company
+              </h4>
+              <ul
+                class="footer-link-list list-none m-0 p-0 flex flex-col gap-[14px]"
+              >
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-link-column flex flex-col gap-[20px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Resources
+              </h4>
+              <ul
+                class="footer-link-list list-none m-0 p-0 flex flex-col gap-[14px]"
+              >
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Help Center</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >FAQ</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="grid gap-[24px] border-l border-white pl-[40px] justify-end grid-cols-1 lg:grid-cols-[1fr_1.2fr]"
+          >
+            <div class="footer-app-download max-w-[152px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Download Our App
+              </h4>
+              <div class="app-buttons flex flex-col gap-[12px] mt-[4px]">
+                <a
+                  class="app-button inline-flex items-center max-w-[146px] gap-[10px] py-[10px] px-[16px] bg-[#1e293b] rounded-[10px] no-underline transition-all duration-300 ease-in-out"
+                  href="https://apps.apple.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i
+                    class="fa-brands fa-apple app-button-icon text-[22px] text-white"
+                  ></i>
+                  <div class="app-button-text flex flex-col">
+                    <span
+                      class="app-button-small text-[10px] text-[#94a3b8] font-manrope"
+                      >Download on the</span
+                    >
+                    <span
+                      class="app-button-large text-[12px] font-semibold text-white font-manrope"
+                      >App Store</span
+                    >
+                  </div>
+                </a>
+                <a
+                  class="app-button inline-flex items-center max-w-[146px] gap-[10px] py-[10px] px-[16px] bg-[#1e293b] rounded-[10px] no-underline transition-all duration-300 ease-in-out"
+                  href="https://play.google.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i
+                    class="fa-brands fa-google-play app-button-icon text-[22px] text-white"
+                  ></i>
+                  <div class="app-button-text flex flex-col">
+                    <span
+                      class="app-button-small text-[10px] text-[#94a3b8] font-manrope"
+                      >GET IT ON</span
+                    >
+                    <span
+                      class="app-button-large text-[12px] font-semibold text-white font-manrope"
+                      >Google Play</span
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="footer-newsletter">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Newsletter
+              </h4>
+              <p
+                class="footer-newsletter-text max-w-[196px] text-[14px] text-[#94a3b8] leading-[1.6] mb-[20px] font-inter"
+              >
+                Subscribe for health tips and platform updates.
+              </p>
+              <form
+                class="newsletter-form inline-flex gap-[8px] bg-[#1e293b] rounded-[10px] p-[6px]"
+                onsubmit="event.preventDefault()"
+              >
+                <input
+                  class="newsletter-input bg-transparent pt-[10px] pr-0 pb-[10px] pl-[14px] text-[14px] text-white font-inter"
+                  placeholder="Enter your email..."
+                  required=""
+                  type="email"
+                />
+                <button
+                  aria-label="Subscribe"
+                  class="newsletter-btn w-[40px] h-[40px] rounded-[8px] bg-[#715be1] text-white cursor-pointer flex items-center justify-center transition-all duration-300 ease-in-out text-[14px]"
+                  type="submit"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="footer-divider h-[1px] bg-[#1e293b] mb-[24px]"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px] items-center">
+          <p class="footer-copyright text-[13px] text-[#64748b] font-inter">
+            © 2026 <a href="index.html" class="hover:underline">MediNova</a>. All rights reserved.
+          </p>
+          <p
+            class="footer-built-with text-center md:text-right text-[13px] text-[#64748b] font-inter"
+          >
+            Built with
+            <i
+              class="fa-solid fa-heart heart-icon text-[#ec4899] text-[12px] my-0 mx-[4px]"
+            ></i>
+            for a healthier tomorrow
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

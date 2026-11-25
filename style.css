@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #6750de 0%, #9e88eb 64%);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(103, 80, 222, 0.4);
+}
+
+.btn-icon i {
+  color: #6b54df;
+}
+
+.btn-secondary {
+  border: 2px solid #e5e7eb;
+}
+
+.btn-secondary:hover {
+  border-color: #715be1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(113, 91, 225, 0.12);
+}
+
+.btn-icon-border {
+  border: 2px solid #e5e7eb;
+}
+
+.btn-icon-border i {
+  color: #6b54df;
+}
+
+.btn-secondary:hover .btn-icon-border {
+  border-color: #715be1;
+}
+
+.feature-card {
+  border: 1px solid #f3f4f6;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.how-it-works-section a.btn-primary {
+  display: inline-flex;
+  width: auto;
+}
+
+.step-card {
+  border: 1px solid #f3f4f6;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.step-circle:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 6px 32px rgba(124, 58, 237, 0.2),
+    0 0 0 12px rgba(124, 58, 237, 0.06);
+}
+
+.dashed-line {
+  border-top: 2px dotted #d1d5db;
+}
+
+.specialty-card {
+  border: 1px solid #f3f4f6;
+}
+
+.specialty-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.doctor-cards-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: #e5e7eb transparent;
+}
+
+.doctor-cards-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.doctor-cards-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.doctor-cards-wrapper::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 3px;
+}
+
+.doctor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-card-pink {
+  background: linear-gradient(180deg, #fce7f3 0%, #ffffff 100%);
+}
+
+.doctor-card-lightpink {
+  background: linear-gradient(180deg, #fdf2f8 0%, #ffffff 100%);
+}
+
+.doctor-card-cream {
+  background: linear-gradient(180deg, #fef3c7 0%, #ffffff 100%);
+}
+
+.doctor-card-purple {
+  background: linear-gradient(180deg, #f3e8ff 0%, #ffffff 100%);
+}
+
+.doctor-card-green {
+  background: linear-gradient(180deg, #d1fae5 0%, #ffffff 100%);
+}
+
+.doctor-card-blue {
+  background: linear-gradient(180deg, #dbeafe 0%, #ffffff 100%);
+}
+
+.stats-banner {
+  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #c4b5fd 100%);
+}
+
+.stats-doctor-img {
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+}
+
+.testimonial-card {
+  border: 1px solid #f3f4f6;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-text {
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  border-top: 1px solid #f3f4f6;
+}
+
+.social-discord:hover {
+  background: #4752c4;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(88, 101, 242, 0.4);
+}
+
+.social-x {
+  border: 1px solid #333333;
+}
+
+.social-x:hover {
+  background: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+.social-telegram:hover {
+  background: #1b7fb0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(34, 158, 217, 0.4);
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+.app-button {
+  border: 1px solid #334155;
+}
+
+.app-button:hover {
+  background: #334155;
+  border-color: #475569;
+  transform: translateY(-2px);
+}
+
+.newsletter-form {
+  border: 1px solid #334155;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter-form:focus-within {
+  border-color: #715be1;
+}
+
+.newsletter-input {
+  border: none;
+  outline: none;
+}
+
+.newsletter-input::placeholder {
+  color: #64748b;
+}
+
+.newsletter-btn {
+  border: none;
+}
+
+.newsletter-btn:hover {
+  background: #6d28d9;
+  transform: translateX(2px);
+}
+

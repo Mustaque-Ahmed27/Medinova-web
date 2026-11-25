@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MediNova - About Us</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link href="style.css" rel="stylesheet" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "nav-item": "#070707",
+              "connect-wallet": "#6B54DF",
+              decentralized: "#7156EE",
+              "own-data": "#1cf5f9",
+              "ai-matching": "#e25c3b",
+              seamless: "#339883",
+              "h2-colored": "#715BE1",
+              "secondary-text": "#52429F",
+              "sub-text": "#6d6d6d",
+              "footer-items": "#dbdbdb",
+              "h1-para": "#57607B",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              manrope: ["Manrope", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-manrope antialiased bg-white">
+    <!-- Header / Navbar -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-transparent px-[15px] py-[24px] transition-all duration-300 ease-in-out"
+      id="navbar"
+    >
+      <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-[60px]">
+          <a href="#" class="flex items-center gap-[10px] no-underline">
+            <div
+              class="w-[32px] h-[32px] bg-[#715BE1] rounded-full flex items-center justify-center"
+            >
+              <i class="fa-solid fa-shield-heart text-white text-[18px]"></i>
+            </div>
+            <span class="text-[22px] font-bold text-nav-item font-inter"
+              >MediNova</span
+            >
+          </a>
+          <nav class="hidden lg:block">
+            <ul class="flex items-center gap-[40px] list-none m-0 p-0">
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="find-doctors.html"
+                  >Find Doctors</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="specialties.html"
+                  >Specialties</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[16px] font-bold text-nav-item no-underline"
+                  href="about.html"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="contact.html"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="hidden lg:flex items-center gap-[16px]">
+          <button
+            class="flex items-center gap-[8px] px-[20px] py-[10px] bg-white border border-gray-200 rounded-[10px] text-[14px] font-medium text-gray-700 hover:border-[#7C3AED] hover:text-[#7C3AED] transition-all cursor-pointer"
+          >
+            <i class="fa-solid fa-wallet text-[#6B54DF]"></i>
+            Connect Wallet
+          </button>
+          <button
+            class="relative w-[40px] h-[40px] bg-white border border-gray-200 rounded-[10px] flex items-center justify-center hover:border-[#7C3AED] transition-all cursor-pointer"
+            aria-label="Notifications"
+          >
+            <i class="fa-regular fa-bell text-[16px] text-gray-700"></i>
+            <span
+              class="absolute top-[6px] right-[6px] w-[8px] h-[8px] bg-red-500 rounded-full border-2 border-white"
+            ></span>
+          </button>
+          <button
+            class="w-[40px] h-[40px] rounded-full overflow-hidden border-2 border-gray-200 hover:border-[#7C3AED] transition-all cursor-pointer"
+            aria-label="Profile"
+          >
+            <img
+              src="images/profile-pic.png"
+              alt="Profile"
+              class="w-full h-full object-cover"
+              onerror="
+                this.src =
+                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22><circle cx=%2220%22 cy=%2220%22 r=%2220%22 fill=%22%237C3AED%22/><text x=%2220%22 y=%2225%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2214%22>U</text></svg>'
+              "
+            />
+          </button>
+        </div>
+        <button
+          class="lg:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-[8px]"
+          id="hamburgerBtn"
+        >
+          <span
+            class="block w-[26px] h-[3px] bg-gray-900 rounded-[2px] transition-all hamburger-line"
+          ></span>
+          <span
+            class="block w-[26px] h-[3px] bg-gray-900 rounded-[2px] transition-all hamburger-line"
+          ></span>
+          <span
+            class="block w-[26px] h-[3px] bg-gray-900 rounded-[2px] transition-all hamburger-line"
+          ></span>
+        </button>
+      </div>
+      <div
+        class="hidden lg:hidden absolute top-[72px] left-0 w-full bg-white shadow-lg rounded-b-[16px] p-[24px]"
+        id="mobileMenu"
+      >
+        <nav>
+          <ul class="flex flex-col gap-[20px] mb-[24px] list-none m-0 p-0">
+            <li>
+              <a
+                href="index.html"
+                class="text-[16px] font-semibold text-gray-900 no-underline"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="find-doctors.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >Find Doctors</a
+              >
+            </li>
+            <li>
+              <a
+                href="specialties.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >Specialties</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="flex flex-col gap-[12px]">
+          <a
+            class="w-full px-[20px] py-[12px] bg-white border border-gray-200 rounded-[10px] text-[14px] font-medium text-gray-700 cursor-pointer text-center"
+            href="#"
+            >Connect Wallet</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="relative w-full min-h-[600px] lg:min-h-[700px] bg-no-repeat bg-right-top bg-cover"
+        style="background-image: url(&quot;images/about-hero.png&quot;)"
+      >
+        <!-- Mobile Overlay -->
+        <div
+          class="absolute inset-0 z-0 bg-white/0 max-[575px]:bg-white/70"
+        ></div>
+
+        <div
+          class="relative z-10 max-w-[1310px] mx-auto px-[15px] min-h-[600px] lg:min-h-[700px] flex items-center"
+        >
+          <div class="w-full max-w-[600px] py-[60px] lg:py-0">
+            <!-- About Us Badge -->
+            <div
+              class="inline-flex items-center gap-[8px] px-[16px] py-[8px] bg-white/80 backdrop-blur-sm rounded-full mb-[20px] border border-[#E8E0FF]"
+            >
+              <i
+                class="fa-solid fa-circle-info text-h2-colored text-[14px]"
+              ></i>
+              <span
+                class="font-inter text-[12px] font-semibold text-h2-colored uppercase tracking-wider"
+                >About Us</span
+              >
+            </div>
+
+            <!-- Heading -->
+            <h1
+              class="text-[36px] sm:text-[42px] md:text-[48px] lg:text-[56px] xl:text-[64px] font-semibold leading-[1.1] text-nav-item mb-[20px] font-inter"
+            >
+              We're Here to<br />
+              <span class="text-h2-colored">Care for You</span>
+              <i
+                class="fa-solid fa-sparkles text-h2-colored text-[24px] lg:text-[32px] align-super ml-[4px]"
+              ></i>
+            </h1>
+
+            <!-- Subtext -->
+            <p
+              class="text-[16px] leading-[1.7] font-medium text-h1-para mb-[32px] max-w-[480px]"
+            >
+              At MediNova, we connect you with trusted healthcare professionals
+              and advanced technology to make quality care accessible, simple,
+              and secure.
+            </p>
+
+            <!-- CTA Button -->
+            <a
+              href="#"
+              class="inline-flex items-center bg-gradient-to-r from-[#6750DE] to-[#9E88EB] rounded-[14px] overflow-hidden no-underline shadow-[0_4px_16px_rgba(113,_91,_225,_0.3)] hover:opacity-90 transition-all"
+            >
+              <span
+                class="py-[16px] px-[24px] text-[15px] font-semibold text-white font-inter"
+                >Book Appointment</span
+              >
+              <span
+                class="flex items-center justify-center w-[48px] h-[48px] m-[6px] bg-white rounded-full"
+              >
+                <i
+                  class="fa-solid fa-arrow-right-long text-[#715BE1] text-[18px]"
+                ></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section
+        class="relative z-10 mx-auto -mt-2 max-w-[1310px] px-4 pb-12 sm:px-5 lg:-mt-5"
+      >
+        <div
+          class="grid grid-cols-1 gap-5 rounded-[24px] bg-white p-4 shadow-[0_8px_35px_rgba(103,80,222,0.10)] md:p-6 lg:grid-cols-[1fr_0.9fr_1fr] lg:gap-4"
+        >
+          <!-- Left: Office Image -->
+          <div class="min-w-0">
+            <div
+              class="relative rounded-[16px] overflow-hidden h-[320px] lg:h-full min-h-[320px]"
+            >
+              <img
+                src="images/about-img-1.png"
+                alt="MediNova Office"
+                class="w-full h-full object-cover"
+                onerror="
+                  this.parentElement.style.background =
+                    'linear-gradient(135deg, #E8E0FF 0%, #F3EEFF 100%)'
+                "
+              />
+            </div>
+          </div>
+
+          <!-- Middle: Our Mission -->
+          <div class="flex flex-col justify-center">
+            <div
+              class="inline-flex items-center gap-[8px] px-[12px] py-[6px] bg-[#F3EEFF] rounded-full mb-[16px] w-fit"
+            >
+              <span
+                class="font-inter text-[10px] font-semibold text-h2-colored uppercase tracking-wider"
+                >Our Mission</span
+              >
+            </div>
+            <h2
+              class="font-inter text-[24px] sm:text-[28px] font-bold text-nav-item mb-[16px] leading-[1.2]"
+            >
+              Better Healthcare for a
+              <span class="text-h2-colored">Better Tomorrow</span>
+            </h2>
+            <p
+              class="font-manrope text-[13px] text-sub-text leading-[1.7] mb-[24px]"
+            >
+              Our mission is to bridge the gap between patients and quality
+              healthcare through technology, compassion, and innovation. We are
+              committed to making your health journey seamless and stress-free.
+            </p>
+          </div>
+
+          <!-- Right: Values Card -->
+          <div class="flex flex-col gap-[16px]">
+            <article
+              class="flex gap-[14px] rounded-[13px] bg-white p-[16px] shadow-[0_5px_20px_rgba(35,25,80,0.07)] border border-gray-100"
+            >
+              <span
+                class="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-[12px] bg-[#DBEAFE] text-[#3B82F6]"
+              >
+                <i class="fa-solid fa-wheelchair text-[16px]"></i>
+              </span>
+              <div>
+                <h3 class="text-[14px] font-bold text-nav-item mb-[4px]">
+                  Accessible Care
+                </h3>
+                <p class="text-[12px] leading-[1.6] text-sub-text">
+                  Healthcare anytime, anywhere
+                </p>
+              </div>
+            </article>
+            <article
+              class="flex gap-[14px] rounded-[13px] bg-white p-[16px] shadow-[0_5px_20px_rgba(35,25,80,0.07)] border border-gray-100"
+            >
+              <span
+                class="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-[12px] bg-[#F3EEFF] text-[#715BE1]"
+              >
+                <i class="fa-solid fa-user-doctor text-[16px]"></i>
+              </span>
+              <div>
+                <h3 class="text-[14px] font-bold text-nav-item mb-[4px]">
+                  Trusted Professionals
+                </h3>
+                <p class="text-[12px] leading-[1.6] text-sub-text">
+                  Verified and experienced doctors
+                </p>
+              </div>
+            </article>
+            <article
+              class="flex gap-[14px] rounded-[13px] bg-white p-[16px] shadow-[0_5px_20px_rgba(35,25,80,0.07)] border border-gray-100"
+            >
+              <span
+                class="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-[12px] bg-[#FCE7F3] text-[#EC4899]"
+              >
+                <i class="fa-solid fa-heart text-[16px]"></i>
+              </span>
+              <div>
+                <h3 class="text-[14px] font-bold text-nav-item mb-[4px]">
+                  Patient First
+                </h3>
+                <p class="text-[12px] leading-[1.6] text-sub-text">
+                  Your health and satisfaction are our priority
+                </p>
+              </div>
+            </article>
+            <article
+              class="flex gap-[14px] rounded-[13px] bg-white p-[16px] shadow-[0_5px_20px_rgba(35,25,80,0.07)] border border-gray-100"
+            >
+              <span
+                class="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-[12px] bg-[#DCFCE7] text-[#22C55E]"
+              >
+                <i class="fa-solid fa-shield-halved text-[16px]"></i>
+              </span>
+              <div>
+                <h3 class="text-[14px] font-bold text-nav-item mb-[4px]">
+                  Secure & Private
+                </h3>
+                <p class="text-[12px] leading-[1.6] text-sub-text">
+                  Your data is safe with us
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Stats Section -->
+      <section class="py-[48px] sm:py-[60px] lg:py-[80px]">
+        <div class="max-w-[1310px] mx-auto px-[15px]">
+          <div
+            class="bg-white rounded-[24px] shadow-[0_4px_30px_rgba(113,_91,_225,_0.08)] py-[40px] px-[24px] sm:px-[40px] lg:px-[60px]"
+          >
+            <div
+              class="grid grid-cols-2 lg:grid-cols-4 gap-[32px] lg:gap-[40px] items-center"
+            >
+              <!-- Stat 1: Specialties -->
+              <div class="flex items-center gap-[16px]">
+                <div
+                  class="w-[56px] h-[56px] rounded-full bg-[#F3EEFF] flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(113,_91,_225,_0.12)]"
+                >
+                  <i class="fa-solid fa-users text-[#715BE1] text-[22px]"></i>
+                </div>
+                <div>
+                  <!-- NOTICE: class="counter", data-target="50", data-suffix="K+" -->
+                  <h3
+                    class="font-inter text-[28px] lg:text-[32px] font-bold text-[#715BE1] leading-tight counter"
+                    data-target="50"
+                    data-suffix="K+"
+                  >
+                    0
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] lg:text-[14px] font-medium text-[#6d6d6d] mt-[2px]"
+                  >
+                    Specialties
+                  </p>
+                </div>
+              </div>
+
+              <!-- Stat 2: Expert Doctors -->
+              <div class="flex items-center gap-[16px]">
+                <div
+                  class="w-[56px] h-[56px] rounded-full bg-[#DBEAFE] flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(59,_130,_246,_0.12)]"
+                >
+                  <i class="fa-solid fa-plus text-[#3B82F6] text-[22px]"></i>
+                </div>
+                <div>
+                  <!-- NOTICE: class="counter", data-target="1.5", data-suffix="K+" -->
+                  <h3
+                    class="font-inter text-[28px] lg:text-[32px] font-bold text-[#3B82F6] leading-tight counter"
+                    data-target="1.5"
+                    data-suffix="K+"
+                  >
+                    0
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] lg:text-[14px] font-medium text-[#6d6d6d] mt-[2px]"
+                  >
+                    Expert Doctors
+                  </p>
+                </div>
+              </div>
+
+              <!-- Stat 3: Healthcare Centers -->
+              <div class="flex items-center gap-[16px]">
+                <div
+                  class="w-[56px] h-[56px] rounded-full bg-[#FCE7F3] flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(236,_72,_153,_0.12)]"
+                >
+                  <i
+                    class="fa-solid fa-hospital text-[#EC4899] text-[22px]"
+                  ></i>
+                </div>
+                <div>
+                  <!-- NOTICE: class="counter", data-target="200", data-suffix="+" -->
+                  <h3
+                    class="font-inter text-[28px] lg:text-[32px] font-bold text-[#EC4899] leading-tight counter"
+                    data-target="200"
+                    data-suffix="+"
+                  >
+                    0
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] lg:text-[14px] font-medium text-[#6d6d6d] mt-[2px]"
+                  >
+                    Healthcare Centers
+                  </p>
+                </div>
+              </div>
+
+              <!-- Stat 4: Patient Satisfaction -->
+              <div class="flex items-center gap-[16px]">
+                <div
+                  class="w-[56px] h-[56px] rounded-full bg-[#DCFCE7] flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(34,_197,_94,_0.12)]"
+                >
+                  <i
+                    class="fa-regular fa-face-smile text-[#22C55E] text-[22px]"
+                  ></i>
+                </div>
+                <div>
+                  <!-- NOTICE: class="counter", data-target="99.9", data-suffix="%" -->
+                  <h3
+                    class="font-inter text-[28px] lg:text-[32px] font-bold text-[#22C55E] leading-tight counter"
+                    data-target="99.9"
+                    data-suffix="%"
+                  >
+                    0
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] lg:text-[14px] font-medium text-[#6d6d6d] mt-[2px]"
+                  >
+                    Patient Satisfaction
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="values-section">
+        <div
+          class="max-w-[1310px] mx-auto px-[15px] py-[48px] sm:py-[60px] lg:py-[80px]"
+        >
+          <!-- Section Header -->
+          <div class="mb-[40px]">
+            <div
+              class="inline-flex items-center px-[16px] py-[8px] bg-[#F3EEFF] rounded-full mb-[16px]"
+            >
+              <span
+                class="font-inter text-[11px] font-bold text-h2-colored uppercase tracking-wider"
+                >Our Values</span
+              >
+            </div>
+            <h2
+              class="font-inter text-[32px] sm:text-[36px] lg:text-[40px] font-bold text-nav-item leading-tight"
+            >
+              What <span class="text-h2-colored">Drives Us</span> Every Day
+            </h2>
+          </div>
+
+          <!-- Values Grid -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px]"
+          >
+            <!-- Compassion -->
+            <div
+              class="bg-white rounded-[20px] p-[24px] shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] flex items-start gap-[16px]"
+            >
+              <div
+                class="w-[52px] h-[52px] rounded-full bg-[#F3EEFF] flex items-center justify-center shrink-0"
+              >
+                <i
+                  class="fa-solid fa-hand-holding-heart text-[#715BE1] text-[20px]"
+                ></i>
+              </div>
+              <div>
+                <h3
+                  class="font-inter text-[16px] font-bold text-[#715BE1] mb-[6px]"
+                >
+                  Compassion
+                </h3>
+                <p class="font-manrope text-[13px] text-sub-text leading-[1.6]">
+                  We care with empathy and respect for every individual.
+                </p>
+              </div>
+            </div>
+
+            <!-- Integrity -->
+            <div
+              class="bg-white rounded-[20px] p-[24px] shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] flex items-start gap-[16px]"
+            >
+              <div
+                class="w-[52px] h-[52px] rounded-full bg-[#DBEAFE] flex items-center justify-center shrink-0"
+              >
+                <img src="images/integrity-icon.png" alt="Integrity" />
+              </div>
+              <div>
+                <h3
+                  class="font-inter text-[16px] font-bold text-[#3B82F6] mb-[6px]"
+                >
+                  Integrity
+                </h3>
+                <p class="font-manrope text-[13px] text-sub-text leading-[1.6]">
+                  We uphold honesty, transparency, and ethical practices.
+                </p>
+              </div>
+            </div>
+
+            <!-- Innovation -->
+            <div
+              class="bg-white rounded-[20px] p-[24px] shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] flex items-start gap-[16px]"
+            >
+              <div
+                class="w-[52px] h-[52px] rounded-full bg-[#FCE7F3] flex items-center justify-center shrink-0"
+              >
+                <i
+                  class="fa-regular fa-lightbulb text-[#EC4899] text-[20px]"
+                ></i>
+              </div>
+              <div>
+                <h3
+                  class="font-inter text-[16px] font-bold text-[#EC4899] mb-[6px]"
+                >
+                  Innovation
+                </h3>
+                <p class="font-manrope text-[13px] text-sub-text leading-[1.6]">
+                  We embrace technology and creativity to improve care.
+                </p>
+              </div>
+            </div>
+
+            <!-- Excellence -->
+            <div
+              class="bg-white rounded-[20px] p-[24px] shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] flex items-start gap-[16px]"
+            >
+              <div
+                class="w-[52px] h-[52px] rounded-full bg-[#DCFCE7] flex items-center justify-center shrink-0"
+              >
+                <i
+                  class="fa-solid fa-users-line text-[#22C55E] text-[20px]"
+                ></i>
+              </div>
+              <div>
+                <h3
+                  class="font-inter text-[16px] font-bold text-[#22C55E] mb-[6px]"
+                >
+                  Excellence
+                </h3>
+                <p class="font-manrope text-[13px] text-sub-text leading-[1.6]">
+                  We strive for the highest standards in everything we do.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Our Team Section -->
+      <section class="team-section bg-white">
+        <div
+          class="max-w-[1310px] mx-auto px-[15px] cmn-gap py-[48px] sm:py-[60px] lg:py-[80px]"
+        >
+          <!-- Section Header -->
+          <div
+            class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-[16px] mb-[40px]"
+          >
+            <div>
+              <div
+                class="inline-flex items-center px-[16px] py-[8px] bg-[#F3EEFF] rounded-full mb-[16px]"
+              >
+                <span
+                  class="font-inter text-[11px] font-bold text-h2-colored uppercase tracking-wider"
+                  >Our Team</span
+                >
+              </div>
+              <h2
+                class="font-inter text-[32px] sm:text-[36px] lg:text-[40px] font-bold text-nav-item leading-tight"
+              >
+                Meet the People Behind
+                <span class="text-h2-colored">MediNova</span>
+              </h2>
+            </div>
+            <a
+              href="#"
+              class="inline-flex items-center gap-[8px] font-inter text-[13px] font-semibold text-h2-colored no-underline hover:underline self-start sm:self-end"
+            >
+              View All Team
+              <i class="fa-solid fa-arrow-right-long text-[14px]"></i>
+            </a>
+          </div>
+
+          <!-- Team Grid -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[24px]"
+          >
+            <!-- Team Member 1 -->
+            <div
+              class="team-card bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.10)]"
+            >
+              <div
+                class="bg-[#F3EEFF] rounded-t-[20px] flex items-end justify-center min-h-[240px]"
+              >
+                <img
+                  alt="Dr. Anya Sharma"
+                  class="w-full h-[200px] object-contain object-bottom"
+                  src="images/doctor-1.png"
+                />
+              </div>
+              <div class="p-[20px] text-center">
+                <h3
+                  class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                >
+                  Dr. Anya Sharma
+                </h3>
+                <p class="font-manrope text-[13px] text-sub-text mb-[12px]">
+                  Chief Medical Officer
+                </p>
+                <a
+                  href="https://in.linkedin.com"
+                  target="_blank"
+                  class="inline-flex items-center justify-center w-[36px] h-[36px] rounded-full bg-[#F3EEFF] text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin-in text-[16px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div
+              class="team-card bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.10)]"
+            >
+              <div
+                class="bg-[#FCE7F3] rounded-t-[20px] flex items-end justify-center min-h-[240px]"
+              >
+                <img
+                  alt="Dr. Neha Kapoor"
+                  class="w-full h-[200px] object-contain object-bottom"
+                  src="images/doctor-2.png"
+                />
+              </div>
+              <div class="p-[20px] text-center">
+                <h3
+                  class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                >
+                  Dr. Neha Kapoor
+                </h3>
+                <p class="font-manrope text-[13px] text-sub-text mb-[12px]">
+                  Head of Patient Care
+                </p>
+                <a
+                  href="https://in.linkedin.com"
+                  target="_blank"
+                  class="inline-flex items-center justify-center w-[36px] h-[36px] rounded-full bg-[#F3EEFF] text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin-in text-[16px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div
+              class="team-card bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.10)]"
+            >
+              <div
+                class="bg-[#FEF3C7] rounded-t-[20px] flex items-end justify-center min-h-[240px]"
+              >
+                <img
+                  alt="Dr. Vikram Singh"
+                  class="w-full h-[200px] object-contain object-bottom"
+                  src="images/doctor-3.png"
+                />
+              </div>
+              <div class="p-[20px] text-center">
+                <h3
+                  class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                >
+                  Dr. Vikram Singh
+                </h3>
+                <p class="font-manrope text-[13px] text-sub-text mb-[12px]">
+                  Head of Operations
+                </p>
+                <a
+                  href="https://in.linkedin.com"
+                  target="_blank"
+                  class="inline-flex items-center justify-center w-[36px] h-[36px] rounded-full bg-[#F3EEFF] text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin-in text-[16px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div
+              class="team-card bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.10)]"
+            >
+              <div
+                class="bg-[#F3EEFF] rounded-t-[20px] flex items-end justify-center min-h-[240px]"
+              >
+                <img
+                  alt="Dr. Arjun Mehta"
+                  class="w-full h-[200px] object-contain object-bottom"
+                  src="images/doctor-4.png"
+                />
+              </div>
+              <div class="p-[20px] text-center">
+                <h3
+                  class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                >
+                  Dr. Arjun Mehta
+                </h3>
+                <p class="font-manrope text-[13px] text-sub-text mb-[12px]">
+                  Head of Technology
+                </p>
+                <a
+                  href="https://in.linkedin.com"
+                  target="_blank"
+                  class="inline-flex items-center justify-center w-[36px] h-[36px] rounded-full bg-[#F3EEFF] text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin-in text-[16px]"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section bg-[#0f172a] text-white">
+      <div class="max-w-[1310px] mx-auto px-[15px] pt-[80px] pb-[20px]">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-[1fr_2fr_2fr] gap-[40px] mb-[60px]"
+        >
+          <div class="footer-brand flex flex-col gap-[20px]">
+            <a
+              class="footer-logo flex items-center gap-[10px] no-underline"
+              href="index.html"
+            >
+              <span
+                class="footer-logo-text text-[22px] font-bold text-white font-inter"
+                >MediNova</span
+              >
+            </a>
+            <p
+              class="footer-description font-inter text-[14px] font-normal leading-[1.7] text-[#94a3b8] max-w-[220px]"
+            >
+              Revolutionizing healthcare with Web 3.0 technology. Secure,
+              private, and patient-first.
+            </p>
+            <div class="footer-social flex gap-[12px] mt-[8px]">
+              <a
+                aria-label="Discord"
+                class="social-icon social-discord w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] text-white no-underline transition-all duration-300 ease-in-out bg-[#5865f2]"
+                href="https://discord.com"
+                rel="noopener noreferrer"
+                target="_blank"
+                ><i class="fa-brands fa-discord"></i
+              ></a>
+              <a
+                aria-label="X (Twitter)"
+                class="social-icon social-x w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] text-white no-underline transition-all duration-300 ease-in-out bg-[#1a1a1a]"
+                href="https://twitter.com"
+                rel="noopener noreferrer"
+                target="_blank"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a
+                aria-label="Telegram"
+                class="social-icon social-telegram w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] text-white no-underline transition-all duration-300 ease-in-out bg-[#229ed9]"
+                href="https://telegram.org"
+                rel="noopener noreferrer"
+                target="_blank"
+                ><i class="fa-brands fa-telegram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-[0px]">
+            <div class="footer-link-column flex flex-col gap-[20px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Platform
+              </h4>
+              <ul
+                class="footer-link-list list-none m-0 p-0 flex flex-col gap-[14px]"
+              >
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Find Doctors</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Specialties</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >How it Works</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Pricing</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-link-column flex flex-col gap-[20px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Company
+              </h4>
+              <ul
+                class="footer-link-list list-none m-0 p-0 flex flex-col gap-[14px]"
+              >
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-link-column flex flex-col gap-[20px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Resources
+              </h4>
+              <ul
+                class="footer-link-list list-none m-0 p-0 flex flex-col gap-[14px]"
+              >
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Help Center</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >FAQ</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="grid gap-[24px] border-l border-white pl-[40px] justify-end grid-cols-1 lg:grid-cols-[1fr_1.2fr]"
+          >
+            <div class="footer-app-download max-w-[152px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Download Our App
+              </h4>
+              <div class="app-buttons flex flex-col gap-[12px] mt-[4px]">
+                <a
+                  class="app-button inline-flex items-center max-w-[146px] gap-[10px] py-[10px] px-[16px] bg-[#1e293b] rounded-[10px] no-underline transition-all duration-300 ease-in-out"
+                  href="https://apps.apple.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i
+                    class="fa-brands fa-apple app-button-icon text-[22px] text-white"
+                  ></i>
+                  <div class="app-button-text flex flex-col">
+                    <span
+                      class="app-button-small text-[10px] text-[#94a3b8] font-manrope"
+                      >Download on the</span
+                    >
+                    <span
+                      class="app-button-large text-[12px] font-semibold text-white font-manrope"
+                      >App Store</span
+                    >
+                  </div>
+                </a>
+                <a
+                  class="app-button inline-flex items-center max-w-[146px] gap-[10px] py-[10px] px-[16px] bg-[#1e293b] rounded-[10px] no-underline transition-all duration-300 ease-in-out"
+                  href="https://play.google.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i
+                    class="fa-brands fa-google-play app-button-icon text-[22px] text-white"
+                  ></i>
+                  <div class="app-button-text flex flex-col">
+                    <span
+                      class="app-button-small text-[10px] text-[#94a3b8] font-manrope"
+                      >GET IT ON</span
+                    >
+                    <span
+                      class="app-button-large text-[12px] font-semibold text-white font-manrope"
+                      >Google Play</span
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="footer-newsletter">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Newsletter
+              </h4>
+              <p
+                class="footer-newsletter-text max-w-[196px] text-[14px] text-[#94a3b8] leading-[1.6] mb-[20px] font-inter"
+              >
+                Subscribe for health tips and platform updates.
+              </p>
+              <form
+                class="newsletter-form inline-flex gap-[8px] bg-[#1e293b] rounded-[10px] p-[6px]"
+                onsubmit="event.preventDefault()"
+              >
+                <input
+                  class="newsletter-input bg-transparent pt-[10px] pr-0 pb-[10px] pl-[14px] text-[14px] text-white font-inter"
+                  placeholder="Enter your email..."
+                  required=""
+                  type="email"
+                />
+                <button
+                  aria-label="Subscribe"
+                  class="newsletter-btn w-[40px] h-[40px] rounded-[8px] bg-[#715be1] text-white cursor-pointer flex items-center justify-center transition-all duration-300 ease-in-out text-[14px]"
+                  type="submit"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="footer-divider h-[1px] bg-[#1e293b] mb-[24px]"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px] items-center">
+          <p class="footer-copyright text-[13px] text-[#64748b] font-inter">
+            © 2026 <a href="index.html" class="hover:underline">MediNova</a>.
+            All rights reserved.
+          </p>
+          <p
+            class="footer-built-with text-center md:text-right text-[13px] text-[#64748b] font-inter"
+          >
+            Built with
+            <i
+              class="fa-solid fa-heart heart-icon text-[#ec4899] text-[12px] my-0 mx-[4px]"
+            ></i>
+            for a healthier tomorrow
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

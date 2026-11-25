@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MediNova - Specialties</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link href="style.css" rel="stylesheet" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "nav-item": "#070707",
+              "connect-wallet": "#6B54DF",
+              decentralized: "#7156EE",
+              "own-data": "#1cf5f9",
+              "ai-matching": "#e25c3b",
+              seamless: "#339883",
+              "h2-colored": "#715BE1",
+              "secondary-text": "#52429F",
+              "sub-text": "#6d6d6d",
+              "footer-items": "#dbdbdb",
+              "h1-para": "#57607B",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              manrope: ["Manrope", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-manrope antialiased bg-white">
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-transparent px-[15px] py-[24px] transition-all duration-300 ease-in-out"
+      id="navbar"
+    >
+      <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+        <!-- Logo (Image Only) & Nav Links -->
+        <div class="flex items-center gap-[60px]">
+          <a href="#" class="flex items-center no-underline">
+            <img
+              src="images/main-logo.png"
+              alt="MediNova Logo"
+              class="h-[32px] w-auto"
+            />
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:block">
+            <ul class="flex items-center gap-[48px] list-none m-0 p-0">
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="find-doctors.html"
+                  >Find Doctors</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[16px] font-bold text-nav-item no-underline"
+                  href="specialties.html"
+                  >Specialties</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="about-us.html"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-[14px] font-medium text-sub-text hover:text-nav-item no-underline transition-colors"
+                  href="contact.html"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="hidden lg:flex items-center gap-[16px]">
+          <button
+            class="flex items-center gap-[8px] px-[20px] py-[10px] bg-white border border-gray-200 rounded-[10px] text-[14px] font-medium text-gray-700 hover:border-[#7C3AED] hover:text-[#7C3AED] transition-all cursor-pointer font-custom"
+          >
+            Connect Wallet
+          </button>
+
+          <!-- Notification Bell -->
+          <button
+            class="relative w-[40px] h-[40px] bg-white border border-gray-200 rounded-[10px] flex items-center justify-center hover:border-[#7C3AED] transition-all cursor-pointer"
+            aria-label="Notifications"
+          >
+            <i class="fa-regular fa-bell text-[16px] text-gray-700"></i>
+            <span
+              class="absolute top-[6px] right-[6px] w-[8px] h-[8px] bg-red-500 rounded-full border-2 border-white"
+            ></span>
+          </button>
+
+          <!-- Profile Picture -->
+          <button
+            class="w-[40px] h-[40px] rounded-full overflow-hidden border-2 border-gray-200 hover:border-[#7C3AED] transition-all cursor-pointer"
+            aria-label="Profile"
+          >
+            <img
+              src="images/profile-pic.png"
+              alt="Profile"
+              class="w-full h-full object-cover"
+              onerror="
+                this.src =
+                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22><circle cx=%2220%22 cy=%2220%22 r=%2220%22 fill=%22%237C3AED%22/><text x=%2220%22 y=%2225%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2214%22>U</text></svg>'
+              "
+            />
+          </button>
+        </div>
+        <button
+          class="lg:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-[8px]"
+          id="hamburgerBtn"
+        >
+          <span
+            class="block w-[26px] h-[3px] bg-gray-900 rounded-[2px] transition-all hamburger-line"
+          ></span>
+          <span
+            class="block w-[26px] h-[3px] bg-gray-900 rounded-[2px] transition-all hamburger-line"
+          ></span>
+          <span
+            class="block w-[26px] h-[3px] bg-gray-900 rounded-[2px] transition-all hamburger-line"
+          ></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        class="hidden lg:hidden absolute top-[72px] left-0 w-full bg-white shadow-lg rounded-b-[16px] p-[24px]"
+        id="mobileMenu"
+      >
+        <!-- Mobile Navigation -->
+        <nav>
+          <ul class="flex flex-col gap-[20px] mb-[24px] list-none m-0 p-0">
+            <li>
+              <a
+                href="index.html"
+                class="text-[16px] font-semibold text-gray-900 no-underline"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="find-doctors.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >Find Doctors</a
+              >
+            </li>
+            <li>
+              <a
+                href="specialties.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >Specialties</a
+              >
+            </li>
+            <li>
+              <a
+                href="about-us.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="text-[16px] font-medium text-gray-600 no-underline"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="flex flex-col gap-[12px]">
+          <a
+            class="w-full px-[20px] py-[12px] bg-white border border-gray-200 rounded-[10px] text-[14px] font-medium text-gray-700 cursor-pointer font-custom"
+            href="#"
+          >
+            Connect Wallet
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="relative w-full min-h-[900px] max-h-[1000px] overflow-hidden bg-no-repeat bg-[position:center_top] bg-cover max-[991px]:min-h-[900px] max-[991px]:bg-[length:auto_900px] max-[991px]:bg-[position:58%_top] max-[767px]:min-h-[1040px] max-[767px]:bg-[length:auto_760px] max-[767px]:bg-[position:60%_top] max-[480px]:min-h-[1080px] max-[480px]:bg-[length:auto_650px] max-[480px]:bg-[position:57%_top]"
+        style="background-image: url(&quot;images/specialties-hero.png&quot;)"
+      > 
+        <div class="absolute inset-0 z-0 bg-white/0 max-[575px]:bg-white/70"></div>
+        <div
+          class="relative z-10 max-w-[1310px] mx-auto px-[15px] pt-[205px] max-[991px]:pt-[175px] max-[767px]:pt-[145px] max-[480px]:pt-[132px] relative z-[1]"
+        >
+          <div class="w-full max-w-[690px]">
+            <h1
+              class="font-inter text-[40px] sm:text-[46px] md:text-[56px] font-semibold leading-[1.08] text-nav-item mb-[24px] max-[670px] max-[670px]:mb-[18px]"
+            >
+              Explore Our
+              <span class="text-h2-colored">Medical Specialties</span>
+            </h1>
+
+            <p
+              class="text-[13px] font-medium leading-[1.65] text-[#51536a] mb-[22px] max-w-[480px] max-[767px]:text-[12px] max-[480px]:text-[11px]"
+            >
+              Connect with trusted specialists and book an<br
+                class="max-[767px]:hidden"
+              />
+              appointment that fits your schedule.
+            </p>
+
+            <!-- Search Bar -->
+            <form
+              class="flex h-[68px] w-full max-w-[530px] items-center gap-[14px] rounded-[16px] border border-[#f0edff] bg-white/[.94] px-[20px] shadow-[0_8px_28px_rgba(117,95,220,.08)] max-[767px]:h-[58px] max-[767px]:rounded-[13px] max-[767px]:px-[15px] mb-[18px]"
+              id="specialtySearch"
+              role="search"
+            >
+              <i
+                class="fa-solid fa-magnifying-glass text-[17px] text-[#9279f3]"
+                aria-hidden="true"
+              ></i>
+              <input
+                id="specialtyInput"
+                type="search"
+                placeholder="Search doctors, specialties..."
+                aria-label="Search doctors and specialties"
+                class="min-w-0 flex-1 border-0 bg-transparent font-manrope text-[13px] font-medium text-[#222] outline-none placeholder:text-[#777783]"
+              />
+              <button
+                type="submit"
+                aria-label="Search"
+                class="hidden cursor-pointer border-0 bg-transparent text-h2-colored max-[767px]:block"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+
+            <!-- Popular Searches -->
+            <div class="flex items-center gap-[12px] flex-wrap">
+              <span class="text-[14px] font-semibold text-nav-item font-inter"
+                >Popular Searches:</span
+              >
+              <a
+                href="#"
+                class="px-[16px] py-[6px] bg-white rounded-full text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)] hover:shadow-md transition-all"
+                >Cardiologist</a
+              >
+              <a
+                href="#"
+                class="px-[16px] py-[6px] bg-white rounded-full text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)] hover:shadow-md transition-all"
+                >Neurologist</a
+              >
+              <a
+                href="#"
+                class="px-[16px] py-[6px] bg-white rounded-full text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)] hover:shadow-md transition-all"
+                >Orthopedic</a
+              >
+              <a
+                href="#"
+                class="px-[16px] py-[6px] bg-white rounded-full text-[13px] font-medium text-h2-colored no-underline shadow-[0_2px_8px_rgba(0,_0,_0,_0.04)] hover:shadow-md transition-all"
+                >Pediatrician</a
+              >
+            </div>
+
+            <p
+              id="searchMessage"
+              class="mt-[8px] min-h-[18px] text-[12px] text-connect-wallet"
+              aria-live="polite"
+            ></p>
+          </div>
+        </div>
+
+        <div
+          class="absolute bottom-[100px] left-1/2 -translate-x-1/2 w-[calc(100%-120px)] max-w-[1320px] max-[1200px]:w-[calc(100%-80px)] max-[1200px]:px-[30px] max-[991px]:bottom-[28px] max-[991px]:w-[calc(100%-48px)] max-[991px]:p-[24px] max-[767px]:bottom-[22px] max-[767px]:w-[calc(100%-32px)] max-[767px]:rounded-[18px] max-[767px]:px-[18px] max-[767px]:py-[22px] max-[480px]:w-[calc(100%-28px)] max-[480px]:px-[14px] max-[480px]:py-[20px] rounded-[22px] border border-[rgba(245,242,255,.9)] bg-white/[.97] px-[58px] py-[28px] shadow-[0_8px_34px_rgba(108,87,220,.17)]"
+          aria-label="MediNova statistics"
+        >
+          <div
+            class="grid grid-cols-4 gap-[26px] items-center max-[1200px]:gap-[18px] max-[991px]:grid-cols-2 max-[991px]:gap-[24px] max-[767px]:gap-x-[12px] max-[767px]:gap-y-[22px] max-[480px]:gap-x-[8px]"
+          >
+
+            <div
+              class="flex items-center gap-[18px] max-[1200px]:gap-[12px] max-[767px]:gap-[10px] max-[480px]:items-start max-[480px]:gap-[8px]"
+            >
+              <div
+                class="flex h-[56px] w-[56px] flex-none items-center justify-center rounded-full bg-white text-[19px] text-[#8c73f2] shadow-[0_3px_18px_rgba(90,73,190,.12)] max-[1200px]:h-[48px] max-[1200px]:w-[48px] max-[1200px]:text-[17px] max-[767px]:h-[40px] max-[767px]:w-[40px] max-[767px]:text-[15px] max-[480px]:h-[34px] max-[480px]:w-[34px] max-[480px]:text-[13px]"
+              >
+                <i class="fa-solid fa-user-doctor"></i>
+              </div>
+              <div>
+                <strong
+                  class="block whitespace-nowrap font-inter text-[26px] font-bold leading-[1.3] text-[#8c73f2] max-[1200px]:text-[23px] max-[767px]:text-[20px] max-[480px]:text-[17px]"
+                  >50K+</strong
+                >
+                <span
+                  class="mt-[4px] block whitespace-nowrap text-[13px] leading-[1.4] text-[#696975] max-[1200px]:text-[11px] max-[767px]:whitespace-normal max-[767px]:text-[10px] max-[480px]:text-[9px]"
+                  >Specialties</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="flex items-center gap-[18px] max-[1200px]:gap-[12px] max-[767px]:gap-[10px] max-[480px]:items-start max-[480px]:gap-[8px]"
+            >
+              <div
+                class="flex h-[56px] w-[56px] flex-none items-center justify-center rounded-full bg-white text-[19px] text-[#5899ff] shadow-[0_3px_18px_rgba(90,73,190,.12)] max-[1200px]:h-[48px] max-[1200px]:w-[48px] max-[1200px]:text-[17px] max-[767px]:h-[40px] max-[767px]:w-[40px] max-[767px]:text-[15px] max-[480px]:h-[34px] max-[480px]:w-[34px] max-[480px]:text-[13px]"
+              >
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div>
+                <strong
+                  class="block whitespace-nowrap font-inter text-[26px] font-bold leading-[1.3] text-[#4389f5] max-[1200px]:text-[23px] max-[767px]:text-[20px] max-[480px]:text-[17px]"
+                  >1.5K+</strong
+                >
+                <span
+                  class="mt-[4px] block whitespace-nowrap text-[13px] leading-[1.4] text-[#696975] max-[1200px]:text-[11px] max-[767px]:whitespace-normal max-[767px]:text-[10px] max-[480px]:text-[9px]"
+                  >Expert Doctors</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="flex items-center gap-[18px] max-[1200px]:gap-[12px] max-[767px]:gap-[10px] max-[480px]:items-start max-[480px]:gap-[8px]"
+            >
+              <div
+                class="flex h-[56px] w-[56px] flex-none items-center justify-center rounded-full bg-white text-[19px] text-[#ef8bc4] shadow-[0_3px_18px_rgba(90,73,190,.12)] max-[1200px]:h-[48px] max-[1200px]:w-[48px] max-[1200px]:text-[17px] max-[767px]:h-[40px] max-[767px]:w-[40px] max-[767px]:text-[15px] max-[480px]:h-[34px] max-[480px]:w-[34px] max-[480px]:text-[13px]"
+              >
+                <i class="fa-solid fa-hospital"></i>
+              </div>
+              <div>
+                <strong
+                  class="block whitespace-nowrap font-inter text-[26px] font-bold leading-[1.3] text-[#ed83c2] max-[1200px]:text-[23px] max-[767px]:text-[20px] max-[480px]:text-[17px]"
+                  >200+</strong
+                >
+                <span
+                  class="mt-[4px] block whitespace-nowrap text-[13px] leading-[1.4] text-[#696975] max-[1200px]:text-[11px] max-[767px]:whitespace-normal max-[767px]:text-[10px] max-[480px]:text-[9px]"
+                  >Healthcare Centers</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="flex items-center gap-[18px] max-[1200px]:gap-[12px] max-[767px]:gap-[10px] max-[480px]:items-start max-[480px]:gap-[8px]"
+            >
+              <div
+                class="flex h-[56px] w-[56px] flex-none items-center justify-center rounded-full bg-white text-[19px] text-[#77c9b9] shadow-[0_3px_18px_rgba(90,73,190,.12)] max-[1200px]:h-[48px] max-[1200px]:w-[48px] max-[1200px]:text-[17px] max-[767px]:h-[40px] max-[767px]:w-[40px] max-[767px]:text-[15px] max-[480px]:h-[34px] max-[480px]:w-[34px] max-[480px]:text-[13px]"
+              >
+                <i class="fa-solid fa-shield-heart"></i>
+              </div>
+              <div>
+                <strong
+                  class="block whitespace-nowrap font-inter text-[26px] font-bold leading-[1.3] text-[#64b9a9] max-[1200px]:text-[23px] max-[767px]:text-[20px] max-[480px]:text-[17px]"
+                  >99.9%</strong
+                >
+                <span
+                  class="mt-[4px] block whitespace-nowrap text-[13px] leading-[1.4] text-[#696975] max-[1200px]:text-[11px] max-[767px]:whitespace-normal max-[767px]:text-[10px] max-[480px]:text-[9px]"
+                  >Patient Satisfaction</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- All Specialties Section -->
+      <section class="all-specialties-section">
+        <div
+          class="max-w-[1310px] mx-auto px-[15px] cmn-gap py-[48px] sm:py-[60px] lg:py-[80px]"
+        >
+          <!-- Section Header -->
+          <div
+            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-[16px] mb-[32px]"
+          >
+            <div>
+              <h2
+                class="font-inter text-[28px] sm:text-[32px] font-bold text-nav-item leading-tight"
+              >
+                All Specialties
+              </h2>
+              <p class="font-manrope text-[14px] text-sub-text mt-[4px]">
+                Browse and choose the right specialty for your health needs.
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-[12px] bg-white rounded-[10px] border border-gray-200 px-[16px] py-[10px] min-w-[180px]"
+            >
+              <label
+                class="font-manrope text-[14px] font-medium text-sub-text whitespace-nowrap"
+                >Sort by:</label
+              >
+              <select
+                class="bg-transparent font-manrope text-[14px] font-semibold text-nav-item outline-none cursor-pointer flex-1"
+              >
+                <option>A to Z</option>
+                <option>Most Doctors</option>
+                <option>Popular</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Specialties Grid -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px]"
+          >
+            <!-- Cardiology -->
+            <div
+              class="specialty-list-card bg-white rounded-[16px] p-[20px] shadow-[0_2px_12px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] cursor-pointer group"
+            >
+              <div class="flex items-start gap-[16px]">
+                <div
+                  class="w-[52px] h-[52px] rounded-full bg-[#FCE7F3] flex items-center justify-center shrink-0"
+                >
+                  <i class="fa-regular fa-heart text-[#EC4899] text-[20px]"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                  >
+                    Cardiology
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] text-sub-text leading-[1.5] mb-[8px]"
+                  >
+                    Diagnosis and treatment of heart and blood vessel
+                    conditions.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-manrope text-[13px] font-semibold text-h2-colored"
+                      >120+ Doctors</span
+                    >
+                    <i
+                      class="fa-solid fa-arrow-right text-[14px] text-h2-colored group-hover:translate-x-[4px] transition-transform"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Neurology -->
+            <div
+              class="specialty-list-card bg-white rounded-[16px] p-[20px] shadow-[0_2px_12px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] cursor-pointer group"
+            >
+              <div class="flex items-start gap-[16px]">
+                <div
+                  class="w-[52px] h-[52px] rounded-full bg-[#DBEAFE] flex items-center justify-center shrink-0"
+                >
+                  <i class="fa-solid fa-brain text-[#3B82F6] text-[20px]"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                  >
+                    Neurology
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] text-sub-text leading-[1.5] mb-[8px]"
+                  >
+                    Care for disorders of the brain, spinal cord, and nervous
+                    system.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-manrope text-[13px] font-semibold text-h2-colored"
+                      >95+ Doctors</span
+                    >
+                    <i
+                      class="fa-solid fa-arrow-right text-[14px] text-h2-colored group-hover:translate-x-[4px] transition-transform"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Orthopedics -->
+            <div
+              class="specialty-list-card bg-white rounded-[16px] p-[20px] shadow-[0_2px_12px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] cursor-pointer group"
+            >
+              <div class="flex items-start gap-[16px]">
+                <div
+                  class="w-[52px] h-[52px] rounded-full bg-[#DCFCE7] flex items-center justify-center shrink-0"
+                >
+                  <i class="fa-solid fa-bone text-[#22C55E] text-[20px]"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                  >
+                    Orthopedics
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] text-sub-text leading-[1.5] mb-[8px]"
+                  >
+                    Treatment of bones, joints, ligaments, tendons and muscles.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-manrope text-[13px] font-semibold text-h2-colored"
+                      >110+ Doctors</span
+                    >
+                    <i
+                      class="fa-solid fa-arrow-right text-[14px] text-h2-colored group-hover:translate-x-[4px] transition-transform"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dermatology -->
+            <div
+              class="specialty-list-card bg-white rounded-[16px] p-[20px] shadow-[0_2px_12px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] cursor-pointer group"
+            >
+              <div class="flex items-start gap-[16px]">
+                <div
+                  class="w-[52px] h-[52px] rounded-full bg-[#FEF3C7] flex items-center justify-center shrink-0"
+                >
+                  <i
+                    class="fa-solid fa-hand-sparkles text-[#F59E0B] text-[20px]"
+                  ></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                  >
+                    Dermatology
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] text-sub-text leading-[1.5] mb-[8px]"
+                  >
+                    Care for skin, hair, and nail disorders.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-manrope text-[13px] font-semibold text-h2-colored"
+                      >60+ Doctors</span
+                    >
+                    <i
+                      class="fa-solid fa-arrow-right text-[14px] text-h2-colored group-hover:translate-x-[4px] transition-transform"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gastroenterology -->
+            <div
+              class="specialty-list-card bg-white rounded-[16px] p-[20px] shadow-[0_2px_12px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] cursor-pointer group"
+            >
+              <div class="flex items-start gap-[16px]">
+                <div
+                  class="w-[52px] h-[52px] rounded-full bg-[#DCFCE7] flex items-center justify-center shrink-0"
+                >
+                  <img src="images/stomach-icon.png" alt="stomach-icon" />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                  >
+                    Gastroenterology
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] text-sub-text leading-[1.5] mb-[8px]"
+                  >
+                    Treatment of digestive system disorders.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-manrope text-[13px] font-semibold text-h2-colored"
+                      >80+ Doctors</span
+                    >
+                    <i
+                      class="fa-solid fa-arrow-right text-[14px] text-h2-colored group-hover:translate-x-[4px] transition-transform"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Nephrology -->
+            <div
+              class="specialty-list-card bg-white rounded-[16px] p-[20px] shadow-[0_2px_12px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] cursor-pointer group"
+            >
+              <div class="flex items-start gap-[16px]">
+                <div
+                  class="w-[52px] h-[52px] rounded-full bg-[#DBEAFE] flex items-center justify-center shrink-0"
+                >
+                  <img src="images/nephrology-icon.png" alt="nephrology-icon" />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                  >
+                    Nephrology
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] text-sub-text leading-[1.5] mb-[8px]"
+                  >
+                    Specialized care for kidney diseases and hypertension.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-manrope text-[13px] font-semibold text-h2-colored"
+                      >55+ Doctors</span
+                    >
+                    <i
+                      class="fa-solid fa-arrow-right text-[14px] text-h2-colored group-hover:translate-x-[4px] transition-transform"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ophthalmology -->
+            <div
+              class="specialty-list-card bg-white rounded-[16px] p-[20px] shadow-[0_2px_12px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] cursor-pointer group"
+            >
+              <div class="flex items-start gap-[16px]">
+                <div
+                  class="w-[52px] h-[52px] rounded-full bg-[#F3E8FF] flex items-center justify-center shrink-0"
+                >
+                  <i class="fa-regular fa-eye text-[#715BE1] text-[20px]"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                  >
+                    Ophthalmology
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] text-sub-text leading-[1.5] mb-[8px]"
+                  >
+                    Diagnosis and treatment of eye and vision conditions.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-manrope text-[13px] font-semibold text-h2-colored"
+                      >65+ Doctors</span
+                    >
+                    <i
+                      class="fa-solid fa-arrow-right text-[14px] text-h2-colored group-hover:translate-x-[4px] transition-transform"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pulmonology -->
+            <div
+              class="specialty-list-card bg-white rounded-[16px] p-[20px] shadow-[0_2px_12px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] cursor-pointer group"
+            >
+              <div class="flex items-start gap-[16px]">
+                <div
+                  class="w-[52px] h-[52px] rounded-full bg-[#FCE7F3] flex items-center justify-center shrink-0"
+                >
+                  <i class="fa-solid fa-lungs text-[#EC4899] text-[20px]"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                  >
+                    Pulmonology
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] text-sub-text leading-[1.5] mb-[8px]"
+                  >
+                    Diagnosis and treatment of lung and respiratory conditions.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-manrope text-[13px] font-semibold text-h2-colored"
+                      >70+ Doctors</span
+                    >
+                    <i
+                      class="fa-solid fa-arrow-right text-[14px] text-h2-colored group-hover:translate-x-[4px] transition-transform"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ENT -->
+            <div
+              class="specialty-list-card bg-white rounded-[16px] p-[20px] shadow-[0_2px_12px_rgba(0,_0,_0,_0.04)] transition-all duration-300 ease-in-out hover:shadow-[0_8px_30px_rgba(113,_91,_225,_0.08)] cursor-pointer group"
+            >
+              <div class="flex items-start gap-[16px]">
+                <div
+                  class="w-[52px] h-[52px] rounded-full bg-[#CCFBF1] flex items-center justify-center shrink-0"
+                >
+                  <i
+                    class="fa-solid fa-ear-listen text-[#14B8A6] text-[20px]"
+                  ></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="font-inter text-[16px] font-bold text-nav-item mb-[4px]"
+                  >
+                    ENT
+                  </h3>
+                  <p
+                    class="font-manrope text-[13px] text-sub-text leading-[1.5] mb-[8px]"
+                  >
+                    Care for ear, nose, throat, and related conditions.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-manrope text-[13px] font-semibold text-h2-colored"
+                      >50+ Doctors</span
+                    >
+                    <i
+                      class="fa-solid fa-arrow-right text-[14px] text-h2-colored group-hover:translate-x-[4px] transition-transform"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section bg-[#0f172a] text-white">
+      <div class="max-w-[1310px] mx-auto px-[15px] pt-[80px] pb-[20px]">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-[1fr_2fr_2fr] gap-[40px] mb-[60px]"
+        >
+          <div class="footer-brand flex flex-col gap-[20px]">
+            <a
+              class="footer-logo flex items-center gap-[10px] no-underline"
+              href="index.html"
+            >
+              <span
+                class="footer-logo-text text-[22px] font-bold text-white font-inter"
+                >MediNova</span
+              >
+            </a>
+            <p
+              class="footer-description font-inter text-[14px] font-normal leading-[1.7] text-[#94a3b8] max-w-[220px]"
+            >
+              Revolutionizing healthcare with Web 3.0 technology. Secure,
+              private, and patient-first.
+            </p>
+            <div class="footer-social flex gap-[12px] mt-[8px]">
+              <a
+                aria-label="Discord"
+                class="social-icon social-discord w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] text-white no-underline transition-all duration-300 ease-in-out bg-[#5865f2]"
+                href="https://discord.com"
+                rel="noopener noreferrer"
+                target="_blank"
+                ><i class="fa-brands fa-discord"></i
+              ></a>
+              <a
+                aria-label="X (Twitter)"
+                class="social-icon social-x w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] text-white no-underline transition-all duration-300 ease-in-out bg-[#1a1a1a]"
+                href="https://twitter.com"
+                rel="noopener noreferrer"
+                target="_blank"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a
+                aria-label="Telegram"
+                class="social-icon social-telegram w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] text-white no-underline transition-all duration-300 ease-in-out bg-[#229ed9]"
+                href="https://telegram.org"
+                rel="noopener noreferrer"
+                target="_blank"
+                ><i class="fa-brands fa-telegram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-[0px]">
+            <div class="footer-link-column flex flex-col gap-[20px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Platform
+              </h4>
+              <ul
+                class="footer-link-list list-none m-0 p-0 flex flex-col gap-[14px]"
+              >
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Find Doctors</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Specialties</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >How it Works</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Pricing</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-link-column flex flex-col gap-[20px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Company
+              </h4>
+              <ul
+                class="footer-link-list list-none m-0 p-0 flex flex-col gap-[14px]"
+              >
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-link-column flex flex-col gap-[20px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Resources
+              </h4>
+              <ul
+                class="footer-link-list list-none m-0 p-0 flex flex-col gap-[14px]"
+              >
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Help Center</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-link font-inter text-[14px] font-normal text-[#dbdbdb] no-underline transition-colors duration-300 ease-in-out"
+                    href="#"
+                    >FAQ</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="grid gap-[24px] border-l border-white pl-[40px] justify-end grid-cols-1 lg:grid-cols-[1fr_1.2fr]"
+          >
+            <div class="footer-app-download max-w-[152px]">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Download Our App
+              </h4>
+              <div class="app-buttons flex flex-col gap-[12px] mt-[4px]">
+                <a
+                  class="app-button inline-flex items-center max-w-[146px] gap-[10px] py-[10px] px-[16px] bg-[#1e293b] rounded-[10px] no-underline transition-all duration-300 ease-in-out"
+                  href="https://apps.apple.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i
+                    class="fa-brands fa-apple app-button-icon text-[22px] text-white"
+                  ></i>
+                  <div class="app-button-text flex flex-col">
+                    <span
+                      class="app-button-small text-[10px] text-[#94a3b8] font-manrope"
+                      >Download on the</span
+                    >
+                    <span
+                      class="app-button-large text-[12px] font-semibold text-white font-manrope"
+                      >App Store</span
+                    >
+                  </div>
+                </a>
+                <a
+                  class="app-button inline-flex items-center max-w-[146px] gap-[10px] py-[10px] px-[16px] bg-[#1e293b] rounded-[10px] no-underline transition-all duration-300 ease-in-out"
+                  href="https://play.google.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i
+                    class="fa-brands fa-google-play app-button-icon text-[22px] text-white"
+                  ></i>
+                  <div class="app-button-text flex flex-col">
+                    <span
+                      class="app-button-small text-[10px] text-[#94a3b8] font-manrope"
+                      >GET IT ON</span
+                    >
+                    <span
+                      class="app-button-large text-[12px] font-semibold text-white font-manrope"
+                      >Google Play</span
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="footer-newsletter">
+              <h4
+                class="footer-link-title font-inter text-[16px] font-semibold text-white mb-[12px]"
+              >
+                Newsletter
+              </h4>
+              <p
+                class="footer-newsletter-text max-w-[196px] text-[14px] text-[#94a3b8] leading-[1.6] mb-[20px] font-inter"
+              >
+                Subscribe for health tips and platform updates.
+              </p>
+              <form
+                class="newsletter-form inline-flex gap-[8px] bg-[#1e293b] rounded-[10px] p-[6px]"
+                onsubmit="event.preventDefault()"
+              >
+                <input
+                  class="newsletter-input bg-transparent pt-[10px] pr-0 pb-[10px] pl-[14px] text-[14px] text-white font-inter"
+                  placeholder="Enter your email..."
+                  required=""
+                  type="email"
+                />
+                <button
+                  aria-label="Subscribe"
+                  class="newsletter-btn w-[40px] h-[40px] rounded-[8px] bg-[#715be1] text-white cursor-pointer flex items-center justify-center transition-all duration-300 ease-in-out text-[14px]"
+                  type="submit"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="footer-divider h-[1px] bg-[#1e293b] mb-[24px]"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px] items-center">
+          <p class="footer-copyright text-[13px] text-[#64748b] font-inter">
+            © 2026 <a href="index.html" class="hover:underline">MediNova</a>. All rights reserved.
+          </p>
+          <p
+            class="footer-built-with text-center md:text-right text-[13px] text-[#64748b] font-inter"
+          >
+            Built with
+            <i
+              class="fa-solid fa-heart heart-icon text-[#ec4899] text-[12px] my-0 mx-[4px]"
+            ></i>
+            for a healthier tomorrow
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
